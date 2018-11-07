@@ -1,0 +1,12 @@
+{
+  "name": "title",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Stefan Huber <sh@signalwerk.ch>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "themes/*",
+    "sites/*"
+  ]
+}
