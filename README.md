@@ -37,10 +37,17 @@ cd ../../../..
 cd ./sites/example/src/pages
 wget https://raw.githubusercontent.com/signalwerk/gatsby-theme-signalwerk/master/__install/sites/example/src/pages/404.js
 wget https://raw.githubusercontent.com/signalwerk/gatsby-theme-signalwerk/master/__install/sites/example/src/pages/index.js
-wget https://raw.githubusercontent.com/signalwerk/gatsby-theme-signalwerk/master/__install/sites/example/src/pages/hi-from-a-themed-site
-wget https://raw.githubusercontent.com/signalwerk/gatsby-theme-signalwerk/master/__install/sites/example/src/pages/hi-from-a-themed-site/index.md
 cd ../../../..
 
+
+# example
+mkdir -p sites/example/src/pages/hi-from-a-themed-site/
+cd ./sites/example/src/pages/hi-from-a-themed-site/
+
+wget https://raw.githubusercontent.com/signalwerk/gatsby-theme-signalwerk/master/__install/sites/example/src/pages/hi-from-a-themed-site/index.md
+cd ../../../../..
+
+# add travis
 wget https://raw.githubusercontent.com/signalwerk/gatsby-theme-signalwerk/master/__install/.travis.yml
 
 ```
