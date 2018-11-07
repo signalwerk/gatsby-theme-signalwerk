@@ -3,7 +3,7 @@ node_js: stable
 install:
   - yarn
 script:
-  - yarn workspace example.blog build
+  - yarn build
 deploy:
   provider: pages
   local-dir: ./sites/example/public

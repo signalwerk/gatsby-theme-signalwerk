@@ -41,9 +41,7 @@ wget https://raw.githubusercontent.com/signalwerk/gatsby-theme-signalwerk/master
 wget https://raw.githubusercontent.com/signalwerk/gatsby-theme-signalwerk/master/__install/sites/example/src/pages/hi-from-a-themed-site/index.md
 cd ../../../..
 
-
 wget https://raw.githubusercontent.com/signalwerk/gatsby-theme-signalwerk/master/__install/.travis.yml
-
 
 ```
 
@@ -52,5 +50,7 @@ wget https://raw.githubusercontent.com/signalwerk/gatsby-theme-signalwerk/master
 
 ```sh
 yarn
-yarn workspace example.blog develop
+yarn develop
+# or
+yarn build
 ```
