@@ -9,7 +9,7 @@
 ## Install in a new repo
 ```sh
 mkdir -p themes
-git submodule add https://github.com/signalwerk/gatsby-theme-signalwerk.git
+git submodule add https://github.com/signalwerk/gatsby-theme-signalwerk.git themes/gatsby-theme-signalwerk
 
 wget https://raw.githubusercontent.com/signalwerk/gatsby-theme-signalwerk/master/__install/package.json
 
