@@ -6,7 +6,7 @@ const withThemePath = require('./with-theme-path')
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-  const blogPost = withThemePath('./src/templates/blog-post.js')
+  const Post = withThemePath('./src/templates/Post')
 
   return new Promise((resolve, reject) => {
     resolve(
@@ -16,14 +16,19 @@ exports.createPages = ({ graphql, actions }) => {
             allMarkdownRemark(
               sort: { fields: [frontmatter___date], order: DESC }
               limit: 1000
+              filter: { frontmatter: { draft: { ne: true } } }
             ) {
               edges {
                 node {
+                  excerpt
                   fields {
                     slug
                   }
                   frontmatter {
+                    date(formatString: "DD MMMM, YYYY")
                     title
+                    author
+                    tags
                   }
                 }
               }
@@ -36,7 +41,7 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        // Create blog posts pages.
+        // Create post pages.
         const posts = result.data.allMarkdownRemark.edges
 
         _.each(posts, (post, index) => {
@@ -46,7 +51,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           createPage({
             path: post.node.fields.slug,
-            component: blogPost,
+            component: Post,
             context: {
               slug: post.node.fields.slug,
               previous,

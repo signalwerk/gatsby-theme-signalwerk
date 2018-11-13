@@ -4,6 +4,7 @@ import get from 'lodash/get'
 import Helmet from 'react-helmet'
 
 import Bio from '../components/Bio'
+import Meta from '../components/Meta'
 import Layout from '../components/layout'
 import { rhythm } from '../utils/typography'
 
@@ -23,7 +24,10 @@ class BlogIndex extends React.Component {
           meta={[{ name: 'description', content: siteDescription }]}
           title={siteTitle}
         />
-        <Bio />
+        {/*        <Bio
+            author={`${siteAuthor}`}
+            authorUrl={`${siteAuthorUrl}`}
+          />*/}
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
@@ -37,7 +41,13 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
+              <small>
+                <Meta
+                  author={node.frontmatter.author}
+                  date={node.frontmatter.date}
+                />
+              </small>
+
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </div>
           )
@@ -55,9 +65,14 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         description
+        author
+        authorUrl
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { draft: { ne: true } } }
+    ) {
       edges {
         node {
           excerpt
@@ -67,6 +82,8 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "DD MMMM, YYYY")
             title
+            author
+            tags
           }
         }
       }

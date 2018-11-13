@@ -3,9 +3,13 @@ import Helmet from 'react-helmet'
 import { Link,graphql } from 'gatsby'
 import get from 'lodash/get'
 
-import Bio from '../components/Bio'
-import Layout from '../components/layout'
-import { rhythm, scale } from '../utils/typography'
+import Bio from '../../components/Bio'
+import Meta from '../../components/Meta'
+import Layout from '../../components/layout'
+import { rhythm, scale } from '../../utils/typography'
+
+
+
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -16,6 +20,28 @@ class BlogPostTemplate extends React.Component {
     const siteDescription = post.excerpt
     const { previous, next } = this.props.pageContext
 
+
+
+
+
+    // const tags = post.fields.tagSlugs;
+
+    // const tagsBlock = (
+    //   <ul className="post-single__tags-list">
+    //     {tags.map((tag, i) => (
+    //       <li className="post-single__tags-list-item" key={tag}>
+    //         <Link to={tag} className="post-single__tags-list-item-link">
+    //           {post.frontmatter.tags[i]}
+    //         </Link>
+    //       </li>
+    //     ))}
+    //   </ul>
+    // );
+    //
+
+
+
+
     return (
       <Layout location={this.props.location}>
         <Helmet
@@ -24,26 +50,30 @@ class BlogPostTemplate extends React.Component {
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
         <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: 'block',
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
+
+        <div className="post-single__meta">
+          <small>
+
+            <Meta
+              words={post.wordCount.words}
+              author={post.frontmatter.author}
+              date={post.frontmatter.date}
+              />
+
+          </small>
+        </div>
+
+
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
             marginBottom: rhythm(1),
           }}
         />
-        <Bio
+      {/*        <Bio
           author={`${post.frontmatter.author || siteAuthor}`}
           authorUrl={`${post.frontmatter.authorUrl || siteAuthorUrl}`}
-        />
+        />*/}
         <ul
           style={{
             display: 'flex',
@@ -92,7 +122,13 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        author
+        tags
         date(formatString: "MMMM DD, YYYY")
+        description
+      }
+      wordCount {
+        words
       }
     }
   }

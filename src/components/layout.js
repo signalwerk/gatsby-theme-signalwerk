@@ -48,7 +48,7 @@ class Template extends React.Component {
             }}
             to={'/'}
           >
-            Home
+            ← Home
           </Link>
         </h3>
       )
