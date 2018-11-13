@@ -1,6 +1,14 @@
 ---
 title: New Beginnings
-date: "2015-05-28T22:40:32.169Z"
+author: "Stefan Huber"
+date: "2017-11-11"
+layout: post
+draft: true
+path: "/posts/example/"
+tags:
+  - "TagOne"
+  - "TagTwo"
+description: "bla bla bla... "
 ---
 
 

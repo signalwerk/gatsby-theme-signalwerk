@@ -41,10 +41,10 @@ cd ../../../..
 
 
 # example
-mkdir -p sites/example/src/pages/hi-from-a-themed-site/
-cd ./sites/example/src/pages/hi-from-a-themed-site/
+mkdir -p sites/example/src/pages/-example/
+cd ./sites/example/src/pages/-example/
 
-wget https://raw.githubusercontent.com/signalwerk/gatsby-theme-signalwerk/master/__install/sites/example/src/pages/hi-from-a-themed-site/index.md
+wget https://raw.githubusercontent.com/signalwerk/gatsby-theme-signalwerk/master/__install/sites/example/src/pages/-example/index.md
 cd ../../../../..
 
 # add travis
