@@ -72,14 +72,14 @@ class BlogPostTemplate extends React.Component {
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slugTwo} rel="prev">
+              <Link to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slugTwo} rel="next">
+              <Link to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
               </Link>
             )}
@@ -93,7 +93,7 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slugTwo: String!) {
+  query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
         title
@@ -101,7 +101,7 @@ export const pageQuery = graphql`
         authorUrl
       }
     }
-    markdownRemark(fields: { slugTwo: { eq: $slugTwo } }) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt
       html

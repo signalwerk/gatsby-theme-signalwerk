@@ -68,11 +68,28 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    // const fileNode = getNode(node.parent);
+    // let slug = fileNode.fields.slug;
+    // if (typeof node.frontmatter.path !== 'undefined') {
+    //   slug = node.frontmatter.path;
+    // }
+    // createNodeField({
+    //   node,
+    //   name: 'slugNew',
+    //   value: slug
+    // });
+
+    // add default (for filter)
+    if (typeof node.frontmatter.draft === 'undefined') {
+      node.frontmatter.draft = false
+    }
+
+    const slug = createFilePath({ node, getNode })
+
     createNodeField({
-      name: `slug`,
       node,
-      value,
+      name: `slug`,
+      value: node.frontmatter.path || slug,
     })
   }
 }
