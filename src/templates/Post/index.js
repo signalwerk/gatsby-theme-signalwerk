@@ -1,15 +1,12 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Link,graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
 import Bio from '../../components/Bio'
 import Meta from '../../components/Meta'
 import Layout from '../../components/layout'
 import { rhythm, scale } from '../../utils/typography'
-
-
-
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -19,10 +16,6 @@ class BlogPostTemplate extends React.Component {
     const siteAuthorUrl = get(this.props, 'data.site.siteMetadata.authorUrl')
     const siteDescription = post.excerpt
     const { previous, next } = this.props.pageContext
-
-
-
-
 
     // const tags = post.fields.tagSlugs;
 
@@ -39,9 +32,6 @@ class BlogPostTemplate extends React.Component {
     // );
     //
 
-
-
-
     return (
       <Layout location={this.props.location}>
         <Helmet
@@ -53,16 +43,13 @@ class BlogPostTemplate extends React.Component {
 
         <div className="post-single__meta">
           <small>
-
             <Meta
               words={post.wordCount.words}
               author={post.frontmatter.author}
               date={post.frontmatter.date}
-              />
-
+            />
           </small>
         </div>
-
 
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
@@ -70,7 +57,7 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-      {/*        <Bio
+        {/* <Bio
           author={`${post.frontmatter.author || siteAuthor}`}
           authorUrl={`${post.frontmatter.authorUrl || siteAuthorUrl}`}
         />*/}
@@ -84,20 +71,18 @@ class BlogPostTemplate extends React.Component {
           }}
         >
           <li>
-            {
-              previous &&
-              <Link to={previous.fields.slug} rel="prev">
+            {previous && (
+              <Link to={previous.fields.slugTwo} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
-            }
+            )}
           </li>
           <li>
-            {
-              next &&
-              <Link to={next.fields.slug} rel="next">
+            {next && (
+              <Link to={next.fields.slugTwo} rel="next">
                 {next.frontmatter.title} →
               </Link>
-            }
+            )}
           </li>
         </ul>
       </Layout>
@@ -108,7 +93,7 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query BlogPostBySlug($slugTwo: String!) {
     site {
       siteMetadata {
         title
@@ -116,7 +101,7 @@ export const pageQuery = graphql`
         authorUrl
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    markdownRemark(fields: { slugTwo: { eq: $slugTwo } }) {
       id
       excerpt
       html
