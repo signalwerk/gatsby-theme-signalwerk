@@ -48,7 +48,9 @@ class BlogIndex extends React.Component {
                 />
               </small>
 
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              {(node.frontmatter.description && (
+                <p>{node.frontmatter.description}</p>
+              )) || <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />}
             </div>
           )
         })}
