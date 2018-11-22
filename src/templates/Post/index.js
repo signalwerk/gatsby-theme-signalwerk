@@ -51,6 +51,11 @@ class BlogPostTemplate extends React.Component {
           </small>
         </div>
 
+
+
+        {post.frontmatter.description && <h6>{post.frontmatter.description}</h6>}
+
+
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
