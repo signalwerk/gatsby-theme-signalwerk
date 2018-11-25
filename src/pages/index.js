@@ -6,7 +6,7 @@ import Helmet from 'react-helmet'
 import Bio from '../components/Bio'
 import Meta from '../components/Meta'
 import Layout from '../components/layout'
-import { rhythm } from '../utils/typography'
+import './styles.css'
 
 class BlogIndex extends React.Component {
   render() {
@@ -31,23 +31,18 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || '--no title--'
           return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>
-                <Meta
-                  author={node.frontmatter.author}
-                  date={node.frontmatter.date}
-                />
-              </small>
+            <div className="Index--item" key={node.fields.slug}>
 
+
+              <h2 className="Index--title">
+                <Link to={node.fields.slug}>{title}</Link>
+              </h2>
+              <div className="Index--meta">
+                  <Meta
+                    author={node.frontmatter.author}
+                    date={node.frontmatter.date}
+                  />
+              </div>
               {(node.frontmatter.description && (
                 <p>{node.frontmatter.description}</p>
               )) || <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />}

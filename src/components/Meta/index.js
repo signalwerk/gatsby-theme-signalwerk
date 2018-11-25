@@ -1,5 +1,8 @@
 import React from 'react'
 
+import './styles.css'
+
+
 // https://help.medium.com/hc/en-us/articles/214991667-Read-time
 // http://iovs.arvojournals.org/article.aspx?articleid=2166061
 // german: words: 179, Characters: 920
@@ -23,7 +26,7 @@ class Meta extends React.Component {
     const timeToRead = Math.round((words || 1) / avgWPM) || 1
 
     return (
-      <div>
+      <div className="Meta--root">
         {words && (
           <span className="Meta--timeToRead">
             ~{timeToRead}

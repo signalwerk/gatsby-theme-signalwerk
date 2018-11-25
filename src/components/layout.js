@@ -2,7 +2,16 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { rhythm, scale } from '../utils/typography'
+import './App/css/fonts-var.css'
+import './App/css/fonts.css'
+import './Html/styles.css'
+import './Headings/styles.css'
+import './P/styles.css'
+import './A/styles.css'
+import './Img/styles.css'
+
+import './style.css'
+
 
 class Template extends React.Component {
   render() {
@@ -12,56 +21,19 @@ class Template extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            Blog
-          </Link>
+        <h1>
+        Blog
         </h1>
       )
     } else {
       header = (
-        <h3
-          style={{
-            fontFamily: 'Montserrat, sans-serif',
-            marginTop: 0,
-            marginBottom: rhythm(-1),
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            ← Home
-          </Link>
+        <h3>
+          <Link to={'/'}>← Home</Link>
         </h3>
       )
     }
     return (
-      <div
-        style={{
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
+      <div className="layout--content">
         {header}
         {children}
       </div>

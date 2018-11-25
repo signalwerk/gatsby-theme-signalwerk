@@ -6,7 +6,8 @@ import get from 'lodash/get'
 import Bio from '../../components/Bio'
 import Meta from '../../components/Meta'
 import Layout from '../../components/layout'
-import { rhythm, scale } from '../../utils/typography'
+
+import './styles.css'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -17,21 +18,6 @@ class BlogPostTemplate extends React.Component {
     const siteDescription = post.excerpt
     const { previous, next } = this.props.pageContext
 
-    // const tags = post.fields.tagSlugs;
-
-    // const tagsBlock = (
-    //   <ul className="post-single__tags-list">
-    //     {tags.map((tag, i) => (
-    //       <li className="post-single__tags-list-item" key={tag}>
-    //         <Link to={tag} className="post-single__tags-list-item-link">
-    //           {post.frontmatter.tags[i]}
-    //         </Link>
-    //       </li>
-    //     ))}
-    //   </ul>
-    // );
-    //
-
     return (
       <Layout location={this.props.location}>
         <Helmet
@@ -39,56 +25,41 @@ class BlogPostTemplate extends React.Component {
           meta={[{ name: 'description', content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
-        <h1>{post.frontmatter.title}</h1>
 
         <div className="post-single__meta">
-          <small>
-            <Meta
-              words={post.wordCount.words}
-              author={post.frontmatter.author}
-              date={post.frontmatter.date}
-            />
-          </small>
+          <Meta
+            words={post.wordCount.words}
+            author={post.frontmatter.author}
+            date={post.frontmatter.date}
+          />
         </div>
+        <h1>{post.frontmatter.title}</h1>
 
-
-
-        {post.frontmatter.description && <h6>{post.frontmatter.description}</h6>}
-
+        {post.frontmatter.description && (
+          <h2 className="post-single__lead">{post.frontmatter.description}</h2>
+        )}
 
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+        <hr />
         {/* <Bio
           author={`${post.frontmatter.author || siteAuthor}`}
           authorUrl={`${post.frontmatter.authorUrl || siteAuthorUrl}`}
         />*/}
-        <ul
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            listStyle: 'none',
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
+        <ul>
+          {previous && (
+            <li>
               <Link to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
-            )}
-          </li>
-          <li>
-            {next && (
+            </li>
+          )}
+          {next && (
+            <li>
               <Link to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
               </Link>
-            )}
-          </li>
+            </li>
+          )}
         </ul>
       </Layout>
     )

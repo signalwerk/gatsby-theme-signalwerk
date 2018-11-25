@@ -1,0 +1,61 @@
+@import "./styles-var.css";
+@import "../App/css/fonts-var.css";
+@import "../App/css/breakpoints-var.css";
+
+h1,
+:global(.h1),
+h2,
+:global(.h2),
+h3,
+:global(.h3),
+h4,
+:global(.h4)  {
+  font-weight: $fontWeights--default--sans--black;
+  line-height: 1.2;
+  letter-spacing: .01em;
+}
+
+h1,
+:global(.h1) {
+  font-size: calc($fontSizes--default--h1 * 1rem);
+  margin-top: 0.5em;
+  margin-bottom: 1.25em;
+
+  @media (--breakpoint-m) {
+    font-size: calc($fontSizes--m--h1 * 1rem);
+  }
+}
+
+h2,
+:global(.h2) {
+  font-size: calc($fontSizes--default--h2 * 1rem);
+  margin-top: 1.7em;
+  margin-bottom: 0.4em;
+
+  @media (--breakpoint-m) {
+    font-size: calc($fontSizes--m--h2 * 1rem);
+  }
+}
+
+h3,
+:global(.h3) {
+  font-size: calc($fontSizes--default--h3 * 1rem);
+  margin-top: 0.9em;
+  margin-bottom: 0.9em;
+
+  @media (--breakpoint-m) {
+    font-size: calc($fontSizes--m--h3 * 1rem);
+  }
+}
+
+
+h3,
+:global(.h3) {
+  font-size: calc($fontSizes--default--h4 * 1rem);
+  margin-top: 0.2em;
+  margin-bottom: 0.4em;
+
+  @media (--breakpoint-m) {
+    font-size: calc($fontSizes--m--h4 * 1rem);
+  }
+}

@@ -1,0 +1,11 @@
+@import "../App/css/fonts-var.css";
+
+html {
+  font-family: $fontNames--sans;
+  font-size: 16px;
+  line-height: 1.65;
+
+  @media (--breakpoint-m) {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,23 @@
+@flegrix {
+  debug: true;
+}
+
+@flegrix grid {
+  columns: 4;
+  gutter: 11%;
+}
+
+@flegrix grid grid-m {
+  columns: 8;
+  gutter: 3%;
+}
+
+@flegrix grid grid-l {
+  columns: 14;
+  gutter: 2.5%;
+}
+
+@flegrix grid grid-xl {
+  columns: 16;
+  gutter: 2%;
+}

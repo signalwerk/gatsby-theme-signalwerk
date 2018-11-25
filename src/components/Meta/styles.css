@@ -1,0 +1,8 @@
+@import "../App/css/colors-var.css";
+.Meta--root {
+  font-size: 0.8rem;
+
+  margin-bottom: 0.3rem;
+  text-align: right;
+  color: $colors--secondary;
+}
