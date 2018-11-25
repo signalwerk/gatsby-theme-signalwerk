@@ -10,6 +10,7 @@ module.exports = ({ root }) => ({
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -24,7 +25,7 @@ module.exports = ({ root }) => ({
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 700,
             },
           },
           {
@@ -62,14 +63,5 @@ module.exports = ({ root }) => ({
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: path.relative(
-          root,
-          require.resolve('./src/utils/typography')
-        ),
-      },
-    },
   ],
 })
