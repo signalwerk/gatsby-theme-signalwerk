@@ -3,7 +3,6 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
-import Bio from '../../components/Bio'
 import Meta from '../../components/Meta'
 import Layout from '../../components/layout'
 
@@ -13,8 +12,6 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-    const siteAuthor = get(this.props, 'data.site.siteMetadata.author')
-    const siteAuthorUrl = get(this.props, 'data.site.siteMetadata.authorUrl')
     const siteDescription = post.excerpt
     const { previous, next } = this.props.pageContext
 
@@ -73,8 +70,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        author
-        authorUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
