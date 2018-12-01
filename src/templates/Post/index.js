@@ -70,10 +70,6 @@ class BlogPostTemplate extends React.Component {
         </MDXProvider>
 
         <hr />
-        {/* <Bio
-          author={`${post.frontmatter.author || siteAuthor}`}
-          authorUrl={`${post.frontmatter.authorUrl || siteAuthorUrl}`}
-        />*/}
         <ul>
           {previous && (
             <li>
