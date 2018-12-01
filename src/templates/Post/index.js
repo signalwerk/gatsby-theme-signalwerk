@@ -1,6 +1,10 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
+import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { MDXProvider, MDXTag } from '@mdx-js/tag'
+import Slider from 'react-slick'
+
 import get from 'lodash/get'
 
 import Meta from '../../components/Meta'
@@ -8,9 +12,30 @@ import Layout from '../../components/layout'
 
 import './styles.css'
 
+class Gallery extends React.Component {
+  render() {
+    var settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      autoplaySpeed: 2500,
+      autoplay: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      pauseOnDotsHover: true,
+    }
+
+    return (
+      <div className="Gallery--root">
+        <Slider {...settings}>{this.props.children.props.children}</Slider>
+      </div>
+    )
+  }
+}
+
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
+    const post = this.props.data.post
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const siteDescription = post.excerpt
     const { previous, next } = this.props.pageContext
@@ -37,6 +62,13 @@ class BlogPostTemplate extends React.Component {
         )}
 
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+
+        <MDXProvider components={{}}>
+          <MDXRenderer scope={{ React, MDXTag, Gallery }}>
+            {post.code.body}
+          </MDXRenderer>
+        </MDXProvider>
+
         <hr />
         {/* <Bio
           author={`${post.frontmatter.author || siteAuthor}`}
@@ -72,10 +104,12 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    post: mdx(fields: { slug: { eq: $slug } }) {
       id
       excerpt
-      html
+      code {
+        body
+      }
       frontmatter {
         title
         author

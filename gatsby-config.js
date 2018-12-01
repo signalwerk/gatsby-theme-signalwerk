@@ -10,6 +10,22 @@ module.exports = ({ root }) => ({
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
+    {
+      resolve: `gatsby-mdx`,
+      options: {
+        extensions: ['.mdx', '.md'],
+
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 700,
+              sizeByPixelDensity: true,
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-filesystem`,

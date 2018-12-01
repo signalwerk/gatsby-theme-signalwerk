@@ -18,3 +18,12 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+
+
+.Gallery--root {
+  margin-bottom: 2rem;
+
+}
+.Gallery--root .gatsby-resp-image-link {
+  margin-bottom: 0rem;
+}
