@@ -1,7 +1,48 @@
+@import '../App/css/fonts-var.css';
+@import '../App/css/breakpoints-var.css';
+
 .Gallery--root {
   margin-bottom: 2rem;
-
 }
 .Gallery--root .gatsby-resp-image-link {
   margin-bottom: 0rem;
+}
+
+.slick-next:before,
+.slick-prev:before {
+  color: #000;
+  font-size: 2rem;
+  @media (--breakpoint-m) {
+    font-size: 1.5rem;
+  }
+}
+
+.slick-prev,
+.slick-next {
+  width: 2rem;
+  height: 2rem;
+  opacity: 0.6;
+
+  @media (--breakpoint-m) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.slick-prev {
+  left: 0.1rem;
+  z-index: 999;
+
+  @media (--breakpoint-m) {
+    left: -1.2rem;
+  }
+}
+
+.slick-next {
+  right: 0.1rem;
+  z-index: 999;
+
+  @media (--breakpoint-m) {
+    right: -1.2rem;
+  }
 }

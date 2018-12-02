@@ -1,4 +1,5 @@
 @import "../App/css/fonts-var.css";
+@import "../App/css/breakpoints-var.css";
 
 html {
   font-family: $fontNames--sans;

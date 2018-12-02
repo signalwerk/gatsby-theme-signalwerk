@@ -1,11 +1,11 @@
 import React from 'react'
 import Slider from 'react-slick'
-// import './styles.css'
+import './styles.css'
 
 
 class Gallery extends React.Component {
   render() {
-    var settings = {
+    const settings = {
       dots: true,
       infinite: true,
       speed: 500,
@@ -15,6 +15,13 @@ class Gallery extends React.Component {
       slidesToScroll: 1,
       pauseOnDotsHover: true,
     }
+    // const settings = {
+    //   dots: true,
+    //   infinite: true,
+    //   speed: 500,
+    //   slidesToShow: 1,
+    //   slidesToScroll: 1
+    // };
 
     return (
       <div className="Gallery--root">

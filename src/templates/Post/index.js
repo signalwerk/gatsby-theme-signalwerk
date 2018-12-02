@@ -12,8 +12,6 @@ import Gallery from '../../components/Gallery'
 
 import './styles.css'
 
-
-
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.post
