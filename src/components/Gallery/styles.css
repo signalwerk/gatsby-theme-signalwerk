@@ -21,7 +21,7 @@
 .slick-next {
   width: 2rem;
   height: 2rem;
-  opacity: 0.6;
+  opacity: 0.3;
 
   @media (--breakpoint-m) {
     width: 1.5rem;
