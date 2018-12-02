@@ -4,6 +4,16 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const withThemePath = require('./with-theme-path')
 
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    },
+  })
+}
+
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   const Post = withThemePath('./src/templates/Post')
