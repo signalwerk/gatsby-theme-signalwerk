@@ -9,6 +9,7 @@ import get from 'lodash/get'
 import Meta from '../../components/Meta'
 import Layout from '../../components/layout'
 import Gallery from '../../components/Gallery'
+import Div from '../../components/Div'
 
 import './styles.css'
 
@@ -43,7 +44,7 @@ class BlogPostTemplate extends React.Component {
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
         <MDXProvider components={{}}>
-          <MDXRenderer scope={{ React, MDXTag, Gallery }}>
+          <MDXRenderer scope={{ React, MDXTag, Gallery, Div }}>
             {post.code.body}
           </MDXRenderer>
         </MDXProvider>
