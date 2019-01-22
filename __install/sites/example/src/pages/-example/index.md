@@ -3,7 +3,7 @@ title: New Beginnings
 author: "Stefan Huber"
 date: "2017-11-11"
 layout: post
-draft: true
+draft: false
 path: "/posts/example/"
 tags:
   - "TagOne"

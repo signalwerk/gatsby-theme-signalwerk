@@ -7,7 +7,7 @@ import Index from "gatsby-theme-signalwerk/src/pages";
 
 
 
-class BlogIndex extends React.Component {
+class Index extends React.Component {
   render() {
     return (
       <React.Fragment>
@@ -17,7 +17,7 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex
+export default Index
 
 export const homeQuery = graphql`
   query {
@@ -29,9 +29,26 @@ export const homeQuery = graphql`
         authorUrl
       }
     }
-    allMarkdownRemark(
+    post: mdx(fields: {slug: {eq: "root"}}) {
+      id
+      excerpt
+      code {
+        body
+      }
+      frontmatter {
+        title
+        author
+        tags
+        date(formatString: "MMMM DD, YYYY")
+        description
+      }
+      wordCount {
+        words
+      }
+    }
+    posts: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { ne: true } } }
+      filter: { frontmatter: { draft: { ne: true }, hideInMenu: { ne: true } } }
     ) {
       edges {
         node {
