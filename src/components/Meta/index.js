@@ -26,7 +26,7 @@ class Meta extends React.Component {
     const timeToRead = Math.round((words || 1) / avgWPM) || 1
 
     return (
-      <div className="Meta--root">
+      <div className="column__text Meta--root">
         {words && (
           <span className="Meta--timeToRead">
             ~{timeToRead}

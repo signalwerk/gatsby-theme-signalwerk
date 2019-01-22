@@ -3,10 +3,14 @@
 
 html {
   font-family: $fontNames--sans;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.65;
 
   @media (--breakpoint-m) {
+    font-size: 17px;
+  }
+
+  @media (--breakpoint-l) {
     font-size: 18px;
   }
 }

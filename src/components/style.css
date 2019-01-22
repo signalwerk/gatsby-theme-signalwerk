@@ -1,6 +1,26 @@
-.layout--content {
+.layout--content > div > p,
+.layout--content > div > pre,
+.layout--content > div > code,
+.layout--content > h1,
+.layout--content > div > h2,
+.layout--content > div > h3,
+.layout--content > div > h4,
+.layout--content > div > ul,
+.layout--content > div > video,
+/* .layout--content > div > div, */
+
+.layout--content > div > .gatsby-highlight,
+.layout--content .column__text,
+.layout--content > div > .Margin--root
+{
   margin-left: auto;
   margin-right: auto;
   max-width: 40rem;
   padding: 0 2%;
+}
+
+.layout--home {
+  position: sticky;
+  top: 0;
+  z-index: 90;
 }
