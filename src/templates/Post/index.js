@@ -10,6 +10,7 @@ import Meta from '../../components/Meta'
 import Layout from '../../components/layout'
 import Gallery from '../../components/Gallery'
 import Div from '../../components/Div'
+import Margin from '../../components/Margin'
 
 import './styles.css'
 
@@ -38,13 +39,17 @@ class BlogPostTemplate extends React.Component {
         <h1>{post.frontmatter.title}</h1>
 
         {post.frontmatter.description && (
-          <h2 className="post-single__lead">{post.frontmatter.description}</h2>
+          <div className="column__text">
+            <h2 className="post-single__lead">
+              {post.frontmatter.description}
+            </h2>
+          </div>
         )}
 
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
         <MDXProvider components={{}}>
-          <MDXRenderer scope={{ React, MDXTag, Gallery, Div }}>
+          <MDXRenderer scope={{ React, MDXTag, Gallery, Div, Margin }}>
             {post.code.body}
           </MDXRenderer>
         </MDXProvider>

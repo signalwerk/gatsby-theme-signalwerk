@@ -1,15 +1,15 @@
 @import '../../components/App/css/colors-var.css';
 @import '../../components/App/css/breakpoints-var.css';
 
-.post-single__lead {
+.layout--content .post-single__lead {
   color: $colors--secondary;
-  margin-left: 1.3em;
+  padding-left: calc(2% + 1.3em);
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 2rem;
 
   @media (--breakpoint-m) {
-    margin-left: 4.3em;
+    padding-left: calc(2% + 4.3em);
     font-size: 1.5rem;
   }
 }
