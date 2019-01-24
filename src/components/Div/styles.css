@@ -1,0 +1,12 @@
+@import '../App/css/fonts-var.css';
+@import '../App/css/breakpoints-var.css';
+
+
+.col3of12 {
+  width: 25%;
+}
+
+
+.col2of12 {
+  width: 16.66%;
+}

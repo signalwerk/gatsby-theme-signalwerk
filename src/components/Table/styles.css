@@ -1,0 +1,65 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-feature-settings: 'lnum' 1, 'tnum' 1;
+}
+
+@supports (font-variant-numeric: lining-nums) {
+  table {
+    font-feature-settings: normal;
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+}
+
+th {
+  text-align: left;
+}
+
+tr {
+  border-bottom: 0.12rem solid #ccc;
+}
+@media print {
+  tr {
+    page-break-inside: avoid;
+  }
+}
+
+td,
+th {
+  vertical-align: top;
+
+  img {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.tab-col-33p {
+  td,
+  th {
+    width: 33.333%;
+  }
+}
+
+/* table {
+    @for $i from 1 through 20 {
+        .w#{$i * 5}p {
+            width: 5% * $i;
+        }
+    }
+    @for $i from 1 through 10 {
+        .imgW#{$i}0p img {
+            width: 10% * $i;
+        }
+    }
+
+    .w33p {
+        width: 33.33%;
+    }
+} */
+
+/* td.nums {
+	text-align: right;
+} */

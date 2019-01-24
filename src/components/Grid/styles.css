@@ -1,0 +1,131 @@
+@import "../App/css/breakpoints-var.css";
+@import '../App/css/colors-var.css';
+
+.w60 {
+  padding-right: 40%;
+}
+
+.bg {
+  position: relative;
+}
+
+.wide-grid.space {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.layout--content .wide-grid.pad {
+  padding-top: 3.2rem;
+  padding-bottom: 3.2rem;
+}
+
+.bg:before {
+  z-index: 10;
+  content: ' ';
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  left: 50%;
+  margin-left: -50vw;
+  background-color: rgb(230,232,233);
+  margin-top: 0;
+  display: block;
+  /* border-top: 1px solid $colors--secondary; */
+  /* border-bottom: 1px solid $colors--secondary; */
+}
+
+.bg div[class^='col-'] {
+  z-index: 50;
+}
+/* .max-height {
+  height: 10rem;
+  position: relative;
+
+} */
+/* .max-height figure {
+  position: absolute;
+  height: 100%;
+}
+.max-height img {
+  height: 100%;
+  width: auto;
+} */
+
+.layout--content .video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+.layout--content .video embed,
+.video iframe,
+.video object {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.layout--content .wide-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 3%;
+
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+  padding: 0 2%;
+}
+
+.layout--content .wide-grid > div[class^='col-'] {
+  grid-column-start: 1;
+  grid-column-end: 13;
+}
+
+@media (--breakpoint-m) {
+  .layout--content .wide-grid > div.col-1to4 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+  }
+  .layout--content .wide-grid > div.col-1to6 {
+    grid-column-start: 1;
+    grid-column-end: 7;
+  }
+
+
+
+    .layout--content .wide-grid > div.col-5to8 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+    }
+  .layout--content .wide-grid > div.col-5to12 {
+    grid-column-start: 5;
+    grid-column-end: 13;
+  }
+
+  .layout--content .wide-grid > div.col-7to12 {
+    grid-column-start: 7;
+    grid-column-end: 13;
+  }
+    .layout--content .wide-grid > div.col-9to12 {
+      grid-column-start: 9;
+      grid-column-end: 13;
+    }
+}
+
+/* @media screen and (min-width: 49rem) {
+   .wide-grid {
+    margin-left: -10.36%;
+    width: 120.72%;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+   .wide-grid {
+    margin-left: -26.125%;
+    width: 152.25%;
+  }
+} */

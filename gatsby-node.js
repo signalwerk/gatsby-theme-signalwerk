@@ -4,9 +4,19 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const withThemePath = require('./with-theme-path')
 
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    },
+  })
+}
+
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-  const blogPost = withThemePath('./src/templates/blog-post.js')
+  const Post = withThemePath('./src/templates/Post')
 
   return new Promise((resolve, reject) => {
     resolve(
@@ -16,14 +26,19 @@ exports.createPages = ({ graphql, actions }) => {
             allMarkdownRemark(
               sort: { fields: [frontmatter___date], order: DESC }
               limit: 1000
+              filter: { frontmatter: { draft: { ne: true } } }
             ) {
               edges {
                 node {
+                  excerpt
                   fields {
                     slug
                   }
                   frontmatter {
+                    date(formatString: "DD MMMM, YYYY")
                     title
+                    author
+                    tags
                   }
                 }
               }
@@ -36,7 +51,7 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        // Create blog posts pages.
+        // Create post pages.
         const posts = result.data.allMarkdownRemark.edges
 
         _.each(posts, (post, index) => {
@@ -46,7 +61,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           createPage({
             path: post.node.fields.slug,
-            component: blogPost,
+            component: Post,
             context: {
               slug: post.node.fields.slug,
               previous,
@@ -62,12 +77,29 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+  if (node.internal.type === `MarkdownRemark` || node.internal.type === `Mdx`) {
+    // const fileNode = getNode(node.parent);
+    // let slug = fileNode.fields.slug;
+    // if (typeof node.frontmatter.path !== 'undefined') {
+    //   slug = node.frontmatter.path;
+    // }
+    // createNodeField({
+    //   node,
+    //   name: 'slugNew',
+    //   value: slug
+    // });
+
+    // add default (for filter)
+    if (typeof node.frontmatter.draft === 'undefined') {
+      node.frontmatter.draft = false
+    }
+
+    const slug = createFilePath({ node, getNode })
+
     createNodeField({
-      name: `slug`,
       node,
-      value,
+      name: `slug`,
+      value: node.frontmatter.path || slug,
     })
   }
 }

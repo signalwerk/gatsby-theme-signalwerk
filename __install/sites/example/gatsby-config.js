@@ -1,14 +1,12 @@
 module.exports = {
   pathPrefix: `/blog`,
 
-  __experimentalThemes: [
-    [
-      "gatsby-theme-signalwerk",
-      {
-        root: __dirname,
-      }
-    ]
-  ],
+  __experimentalThemes: [{
+    resolve: 'gatsby-theme-signalwerk',
+    options: {
+      root: __dirname,
+    }
+  }],
 
   siteMetadata: {
     title: 'Blog',

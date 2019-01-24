@@ -1,0 +1,43 @@
+@import '../App/css/breakpoints-var.css';
+@import '../App/css/colors-var.css';
+
+.Margin--root {
+  font-size: 0.85em;
+}
+
+@media (--breakpoint-m) {
+  .Margin--root {
+    height: 0;
+    overflow: visible;
+  }
+}
+
+.Margin--root .Margin--inner {
+  /* max-width: 20rem; */
+  width: 100%;
+
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+  border-top: 0.2rem solid $colors--secondary;
+  border-bottom: 1px solid $colors--secondary;
+  background-color: rgb(230,232,233);; /* rgba(98, 122, 135, .1)*/
+}
+
+@media (--breakpoint-m) {
+  .Margin--root .Margin--inner {
+    width: 17rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.4rem;
+    float: left;
+    margin: 0.3rem 1.2rem 0.7rem 0;
+    margin-left: -4rem;
+    clear: both;
+  }
+}
+
+@media (--breakpoint-l) {
+  .Margin--root .Margin--inner {
+    margin-left: -20rem;
+  }
+}

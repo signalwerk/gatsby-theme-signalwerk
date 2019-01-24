@@ -1,0 +1,25 @@
+@import "../variables.css";
+
+/* debug */
+body::after {
+  content: "mobile";
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 12px;
+  color: #f00;
+  padding: 0.5em 1em;
+  background-color: #ccc;
+
+  @media (--breakpoint-m) {
+    content: "Size m";
+  }
+
+  @media (--breakpoint-l) {
+    content: "Size l";
+  }
+
+  @media (--breakpoint-xl) {
+    content: "Size xl";
+  }
+}

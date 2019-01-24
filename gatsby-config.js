@@ -11,6 +11,32 @@ module.exports = ({ root }) => ({
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
     {
+      resolve: `gatsby-mdx`,
+      options: {
+        extensions: ['.mdx', '.md'],
+
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+          },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 700,
+              sizeByPixelDensity: true,
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+          },
+          {
+            resolve: 'gatsby-remark-prismjs',
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-postcss`,
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `src/pages`,
@@ -21,21 +47,17 @@ module.exports = ({ root }) => ({
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          'gatsby-remark-copy-linked-files',
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 700,
             },
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
           },
           'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
         ],
       },
     },
@@ -62,14 +84,5 @@ module.exports = ({ root }) => ({
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: path.relative(
-          root,
-          require.resolve('./src/utils/typography')
-        ),
-      },
-    },
   ],
 })
