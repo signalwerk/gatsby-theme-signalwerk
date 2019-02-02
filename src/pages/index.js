@@ -30,7 +30,7 @@ class Index extends React.Component {
         />
 
         {post && (
-          <div className="Index--item">
+          <React.Fragment className="Index--item">
             <h1>{post.frontmatter.title}</h1>
 
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -40,7 +40,7 @@ class Index extends React.Component {
                 {post.code.body}
               </MDXRenderer>
             </MDXProvider>
-          </div>
+          </React.Fragment>
         )}
 
         {posts &&

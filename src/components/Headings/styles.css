@@ -10,7 +10,7 @@ h3,
 :global(.h3),
 h4,
 :global(.h4)  {
-  font-weight: $fontWeights--default--sans--black;
+  font-weight: $fontWeights--default--sans--bold;
   line-height: 1.2;
   letter-spacing: .01em;
 }
@@ -40,8 +40,8 @@ h2,
 h3,
 :global(.h3) {
   font-size: calc($fontSizes--default--h3 * 1rem);
-  margin-top: 0.9em;
-  margin-bottom: 0.9em;
+  margin-top: 1.9em;
+  margin-bottom: 0.2em;
 
   @media (--breakpoint-m) {
     font-size: calc($fontSizes--m--h3 * 1rem);
@@ -49,10 +49,10 @@ h3,
 }
 
 
-h3,
-:global(.h3) {
+h4,
+:global(.h4) {
   font-size: calc($fontSizes--default--h4 * 1rem);
-  margin-top: 0.2em;
+  margin-top: 1.1em;
   margin-bottom: 0.4em;
 
   @media (--breakpoint-m) {

@@ -1,8 +1,14 @@
 @import '../App/css/breakpoints-var.css';
 @import '../App/css/colors-var.css';
+@import "../App/css/fonts-var.css";
+@import "../Headings/styles-var.css";
+
+
+$margin--font--scale: 0.85;
+
 
 .Margin--root {
-  font-size: 0.85em;
+  font-size: calc($margin--font--scale * 1em);
 }
 
 @media (--breakpoint-m) {
@@ -12,32 +18,82 @@
   }
 }
 
+
+h1,
+:global(.h1) {
+  font-size: calc($fontSizes--default--h1 * $margin--font--scale * 1rem);
+  @media (--breakpoint-m) {
+    font-size: calc($fontSizes--m--h1 * $margin--font--scale * 1rem);
+  }
+}
+
+h2,
+:global(.h2) {
+  font-size: calc($fontSizes--default--h2 * $margin--font--scale * 1rem);
+  @media (--breakpoint-m) {
+    font-size: calc($fontSizes--m--h2 * $margin--font--scale * 1rem);
+  }
+}
+
+h3,
+:global(.h3) {
+  font-size: calc($fontSizes--default--h3 * $margin--font--scale * 1rem);
+
+  margin-top: 1.2em;
+  margin-bottom: .4em;
+
+  @media (--breakpoint-m) {
+    font-size: calc($fontSizes--m--h3 * $margin--font--scale * 1rem);
+  }
+}
+
+
+h4,
+:global(.h4) {
+  font-size: calc($fontSizes--default--h4 * $margin--font--scale * 1rem);
+  @media (--breakpoint-m) {
+    font-size: calc($fontSizes--m--h4 * $margin--font--scale * 1rem);
+  }
+}
+
+
+
+
+
+
+
 .Margin--root .Margin--inner {
   /* max-width: 20rem; */
-  width: 100%;
 
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  width: calc(100% - 1rem);
+
 
   border-top: 0.2rem solid $colors--secondary;
   border-bottom: 1px solid $colors--secondary;
   background-color: rgb(230,232,233);; /* rgba(98, 122, 135, .1)*/
+
+  > h3:first-child, > .h3:first-child  {
+    margin-top: 0;
+  }
+
 }
+
+/* @media (--breakpoint-m) {
+  .Margin--root .Margin--inner {
+    float: left;
+    margin: 0.3rem 1.2rem 0.7rem 0;
+    margin-left: -12rem;
+    clear: both;
+  }
+} */
 
 @media (--breakpoint-m) {
   .Margin--root .Margin--inner {
     width: 17rem;
-    padding-top: 0.7rem;
-    padding-bottom: 0.4rem;
-    float: left;
-    margin: 0.3rem 1.2rem 0.7rem 0;
-    margin-left: -4rem;
-    clear: both;
-  }
-}
-
-@media (--breakpoint-l) {
-  .Margin--root .Margin--inner {
     margin-left: -20rem;
+      padding-top: 0.7rem;
+      padding-bottom: 0.4rem;
   }
 }

@@ -2,7 +2,7 @@ $fontNames--sans: BlogSans;
 $fontFamilies--default--sans: BlogSans,Source Sans Pro,Source Sans,Helvetica,Arial,sans-serif;
 
 $fontWeights--default--sans--regular: 400;
-$fontWeights--default--sans--black: 900;
+$fontWeights--default--sans--bold: 900;
 
 
 /* Fontsize scaling factor for small text */

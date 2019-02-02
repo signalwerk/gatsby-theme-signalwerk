@@ -13,7 +13,7 @@
 @font-face {
   font-family: $fontNames--sans;
   font-style: normal;
-  font-weight: $fontWeights--default--sans--black;
-  src: url('../../../../static/fonts/work-sans-v3-latin-ext_latin/work-sans-v3-latin-ext_latin-900.woff2') format('woff2'),
-       url('../../../../static/fonts/work-sans-v3-latin-ext_latin/work-sans-v3-latin-ext_latin-900.woff') format('woff');
+  font-weight: $fontWeights--default--sans--bold;
+  src: url('../../../../static/fonts/work-sans-v3-latin-ext_latin/work-sans-v3-latin-ext_latin-700.woff2') format('woff2'),
+       url('../../../../static/fonts/work-sans-v3-latin-ext_latin/work-sans-v3-latin-ext_latin-700.woff') format('woff');
 }
