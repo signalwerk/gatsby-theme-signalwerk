@@ -12,7 +12,7 @@
 .slick-prev:before {
   color: #000;
   font-size: 2rem;
-  @media (--breakpoint-m) {
+  @media (--breakpoint-s) {
     font-size: 1.5rem;
   }
 }
@@ -23,7 +23,7 @@
   height: 2rem;
   opacity: 0.3;
 
-  @media (--breakpoint-m) {
+  @media (--breakpoint-s) {
     width: 1.5rem;
     height: 1.5rem;
   }
@@ -33,7 +33,7 @@
   left: 0.1rem;
   z-index: 999;
 
-  @media (--breakpoint-m) {
+  @media (--breakpoint-s) {
     left: -1.2rem;
   }
 }
@@ -42,7 +42,7 @@
   right: 0.1rem;
   z-index: 999;
 
-  @media (--breakpoint-m) {
+  @media (--breakpoint-s) {
     right: -1.2rem;
   }
 }

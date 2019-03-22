@@ -11,6 +11,10 @@ body::after {
   padding: 0.5em 1em;
   background-color: #ccc;
 
+  @media (--breakpoint-s) {
+    content: "Size s";
+  }
+
   @media (--breakpoint-m) {
     content: "Size m";
   }

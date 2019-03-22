@@ -85,7 +85,7 @@
   grid-column-end: 13;
 }
 
-@media (--breakpoint-m) {
+@media (--breakpoint-s) {
   .layout--content .wide-grid > div.col-1to4 {
     grid-column-start: 1;
     grid-column-end: 5;

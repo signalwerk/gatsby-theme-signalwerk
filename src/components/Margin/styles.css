@@ -11,7 +11,7 @@ $margin--font--scale: 0.85;
   font-size: calc($margin--font--scale * 1em);
 }
 
-@media (--breakpoint-m) {
+@media (--breakpoint-s) {
   .Margin--root {
     height: 0;
     overflow: visible;
@@ -22,16 +22,16 @@ $margin--font--scale: 0.85;
 h1,
 :global(.h1) {
   font-size: calc($fontSizes--default--h1 * $margin--font--scale * 1rem);
-  @media (--breakpoint-m) {
-    font-size: calc($fontSizes--m--h1 * $margin--font--scale * 1rem);
+  @media (--breakpoint-s) {
+    font-size: calc($fontSizes--s--h1 * $margin--font--scale * 1rem);
   }
 }
 
 h2,
 :global(.h2) {
   font-size: calc($fontSizes--default--h2 * $margin--font--scale * 1rem);
-  @media (--breakpoint-m) {
-    font-size: calc($fontSizes--m--h2 * $margin--font--scale * 1rem);
+  @media (--breakpoint-s) {
+    font-size: calc($fontSizes--s--h2 * $margin--font--scale * 1rem);
   }
 }
 
@@ -42,8 +42,8 @@ h3,
   margin-top: 1.2em;
   margin-bottom: .4em;
 
-  @media (--breakpoint-m) {
-    font-size: calc($fontSizes--m--h3 * $margin--font--scale * 1rem);
+  @media (--breakpoint-s) {
+    font-size: calc($fontSizes--s--h3 * $margin--font--scale * 1rem);
   }
 }
 
@@ -51,8 +51,8 @@ h3,
 h4,
 :global(.h4) {
   font-size: calc($fontSizes--default--h4 * $margin--font--scale * 1rem);
-  @media (--breakpoint-m) {
-    font-size: calc($fontSizes--m--h4 * $margin--font--scale * 1rem);
+  @media (--breakpoint-s) {
+    font-size: calc($fontSizes--s--h4 * $margin--font--scale * 1rem);
   }
 }
 
@@ -80,7 +80,7 @@ h4,
 
 }
 
-/* @media (--breakpoint-m) {
+/* @media (--breakpoint-s) {
   .Margin--root .Margin--inner {
     float: left;
     margin: 0.3rem 1.2rem 0.7rem 0;
@@ -89,7 +89,7 @@ h4,
   }
 } */
 
-@media (--breakpoint-m) {
+@media (--breakpoint-s) {
   .Margin--root .Margin--inner {
     width: 17rem;
     margin-left: -20rem;
