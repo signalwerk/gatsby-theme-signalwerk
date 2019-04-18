@@ -1,5 +1,6 @@
 @import "../components/App/css/colors-var.css";
 @import "../components/App/css/breakpoints-var.css";
+
 .Index--item {
   margin-bottom: 3rem;
 
@@ -7,6 +8,7 @@
     margin-bottom: 4.5rem;
   }
 }
+
 .Index--title {
     margin-top: 0;
 }
