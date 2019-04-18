@@ -7,7 +7,7 @@ import Index from "gatsby-theme-signalwerk/src/pages";
 
 
 
-class Index extends React.Component {
+class BlogIndex extends React.Component {
   render() {
     return (
       <React.Fragment>
@@ -17,7 +17,7 @@ class Index extends React.Component {
   }
 }
 
-export default Index
+export default BlogIndex
 
 export const homeQuery = graphql`
   query {
