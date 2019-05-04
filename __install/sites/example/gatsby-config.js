@@ -12,5 +12,6 @@ module.exports = {
     title: 'Blog',
     author: 'Stefan Huber',
     authorUrl: 'http://signalwerk.ch/',
+    description: 'A starter blog ...'
   },
 };

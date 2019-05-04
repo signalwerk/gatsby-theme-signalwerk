@@ -1,13 +1,6 @@
 const path = require('path')
 
 module.exports = ({ root }) => ({
-  siteMetadata: {
-    title: 'Blog',
-    author: '???author???',
-    authorUrl: 'http://???.com/',
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
-  },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
     {

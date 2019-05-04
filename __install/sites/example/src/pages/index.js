@@ -1,13 +1,9 @@
-import  React from 'react'
-import { Link, graphql } from 'gatsby'
-import get from 'lodash/get'
-import Helmet from 'react-helmet'
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import Index from "gatsby-theme-signalwerk/src/pages";
+import Index from 'gatsby-theme-signalwerk/src/pages'
 
-
-
-class BlogIndex extends React.Component {
+class PageIndex extends React.Component {
   render() {
     return (
       <React.Fragment>
@@ -17,7 +13,7 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex
+export default PageIndex
 
 export const homeQuery = graphql`
   query {
@@ -29,7 +25,7 @@ export const homeQuery = graphql`
         authorUrl
       }
     }
-    post: mdx(fields: {slug: {eq: "root"}}) {
+    post: mdx(fields: { slug: { eq: "root" } }) {
       id
       excerpt
       code {
