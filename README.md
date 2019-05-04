@@ -5,6 +5,9 @@
 * Based on [Christopher Biscardis Theme](https://github.com/ChristopherBiscardi/gatsby-theme-examples)
 * [Introducing gatsby themes](https://github.com/gatsbyjs/gatsby/pull/9517)
 
+# Used
+* [Typesetting Blog](https://signalwerk.github.io/typesetting/) [→ Repo](https://github.com/signalwerk/typesetting/)
+* [Walz Blog](https://signalwerk.github.io/walz.alexanderboenninger/) [→ Repo](https://github.com/signalwerk/walz.alexanderboenninger/)
 
 ## Install in a new repo
 ```sh
