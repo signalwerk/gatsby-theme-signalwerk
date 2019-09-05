@@ -6,9 +6,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "yarn workspace typesetting.blog build",
+    "build": "yarn workspace example.blog build",
     "start": "yarn develop",
-    "develop": "yarn workspace typesetting.blog develop"
+    "develop": "yarn workspace example.blog develop"
   },
   "workspaces": [
     "themes/*",
