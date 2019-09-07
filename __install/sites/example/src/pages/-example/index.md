@@ -4,6 +4,7 @@ author: "Stefan Huber"
 date: "2017-11-11"
 layout: post
 draft: false
+hideInMenu: false
 path: "/posts/example/"
 tags:
   - "TagOne"
