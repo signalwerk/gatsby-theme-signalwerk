@@ -53,7 +53,11 @@ class BlogPostTemplate extends React.Component {
             {post.code.body}
           </MDXRenderer>
         </MDXProvider>
+        <br />
+        <br />
+        <br />
 
+{/*
         <hr />
         <ul>
           {previous && (
@@ -71,6 +75,7 @@ class BlogPostTemplate extends React.Component {
             </li>
           )}
         </ul>
+*/}
       </Layout>
     )
   }

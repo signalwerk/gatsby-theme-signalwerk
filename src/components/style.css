@@ -8,6 +8,8 @@
 .layout--content > div > h3,
 .layout--content > div > h4,
 .layout--content > div > ul,
+.layout--content > div > ol,
+.layout--content > div > blockquote,
 .layout--content > div > video,
 /* .layout--content > div > div, */
 

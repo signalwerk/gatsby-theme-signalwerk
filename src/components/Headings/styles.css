@@ -1,6 +1,6 @@
-@import "./styles-var.css";
 @import "../App/css/fonts-var.css";
 @import "../App/css/breakpoints-var.css";
+@import "./styles-var.css";
 
 h1,
 :global(.h1),
@@ -57,5 +57,6 @@ h4,
 
   @media (--breakpoint-s) {
     font-size: calc($fontSizes--s--h4 * 1rem);
+    content: $fontSizes--s--h4;
   }
 }
