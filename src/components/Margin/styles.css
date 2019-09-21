@@ -81,6 +81,7 @@ $margin--font--scale: 0.85;
 
   @media (--breakpoint-s) {
     width: 17rem;
+    margin-top: 0.5rem;
     margin-left: -20rem;
   }
 }

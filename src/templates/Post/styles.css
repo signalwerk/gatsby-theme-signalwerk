@@ -5,12 +5,13 @@
   color: $colors--secondary;
   padding-left: calc(2% + 1.3em);
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 1.4;
   margin-bottom: 2rem;
+  hyphens: none;
 
   @media (--breakpoint-m) {
     padding-left: calc(2% + 4.3em);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 

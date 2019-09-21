@@ -5,8 +5,27 @@
   font-family: $fontNames--sans;
   font-style: normal;
   font-weight: $fontWeights--default--sans--regular;
-  src: url('../../../../static/fonts/work-sans-v3-latin-ext_latin/work-sans-v3-latin-ext_latin-regular.woff2') format('woff2'),
-      url('../../../../static/fonts/work-sans-v3-latin-ext_latin/work-sans-v3-latin-ext_latin-regular.woff') format('woff');
+  src: url('../../../../static/fonts/Work-Sans-master/WorkSans-Regular.woff2') format('woff2'),
+      url('../../../../static/fonts/Work-Sans-master/WorkSans-Regular.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: $fontNames--sans;
+  font-style: normal;
+  font-weight: $fontWeights--default--sans--regular;
+  src: url('../../../../static/fonts/fontello/font/fontello.woff2') format('woff2'),
+      url('../../../../static/fonts/fontello/font/fontello.woff') format('woff');
+  unicode-range: U+21A9;
+}
+
+
+@font-face {
+  font-family: $fontNames--sans;
+  font-style: italic;
+  font-weight: $fontWeights--default--sans--regular;
+  src: url('../../../../static/fonts/Work-Sans-master/WorkSans-Italic.woff2') format('woff2'),
+      url('../../../../static/fonts/Work-Sans-master/WorkSans-Italic.woff') format('woff');
 
 }
 
@@ -14,6 +33,14 @@
   font-family: $fontNames--sans;
   font-style: normal;
   font-weight: $fontWeights--default--sans--bold;
-  src: url('../../../../static/fonts/work-sans-v3-latin-ext_latin/work-sans-v3-latin-ext_latin-700.woff2') format('woff2'),
-       url('../../../../static/fonts/work-sans-v3-latin-ext_latin/work-sans-v3-latin-ext_latin-700.woff') format('woff');
+  src: url('../../../../static/fonts/Work-Sans-master/WorkSans-Bold.woff2') format('woff2'),
+       url('../../../../static/fonts/Work-Sans-master/WorkSans-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: $fontNames--sans;
+  font-style: italic;
+  font-weight: $fontWeights--default--sans--bold;
+  src: url('../../../../static/fonts/Work-Sans-master/WorkSans-BoldItalic.woff2') format('woff2'),
+       url('../../../../static/fonts/Work-Sans-master/WorkSans-BoldItalic.woff') format('woff');
 }

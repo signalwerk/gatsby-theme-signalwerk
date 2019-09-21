@@ -1,0 +1,39 @@
+@import '../App/css/colors-var.css';
+@import '../App/css/breakpoints-var.css';
+
+blockquote {
+  font-style: italic;
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+
+  .layout--content > div > & {
+    padding-left: calc(2% + 2em);
+
+    @media (--breakpoint-s) {
+      padding-left: calc(20rem + 2em);
+    }
+
+    @media (--breakpoint-l) {
+      padding-left: calc(2% + 2em);
+    }
+  }
+
+  &:before {
+    position: absolute;
+    display: block;
+    content: '';
+    height: 100%;
+    width: 0.25em;
+    margin-left: -1em;
+    background-color: $colors--primary;
+  }
+}
+/*
+blockquote + p {
+  font-size: 90%;
+  font-weight: 700;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+*/

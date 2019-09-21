@@ -1,0 +1,31 @@
+.figurenotes,
+.footnotes {
+  ol {
+    margin-left: 1rem;
+  }
+  hr {
+    display: none;
+  }
+
+  p {
+    display: inline;
+  }
+}
+
+.figurenotes {
+  ol {
+    counter-reset: fig-item;
+    /* list-style-type: decimal; */
+    list-style-type: none;
+  }
+
+  ol li:before {
+    display: inline-block;
+    width: 3rem;
+    text-align: left;
+    margin-left: -3.5rem;
+    padding-right: 0.5rem;
+    content: 'Fig. ' counter(fig-item, decimal);
+    counter-increment: fig-item;
+  }
+}

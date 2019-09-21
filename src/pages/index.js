@@ -24,7 +24,7 @@ class Index extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Helmet
-          htmlAttributes={{ lang: 'en' }}
+          htmlAttributes={{ lang: 'de' }}
           meta={[{ name: 'description', content: siteDescription }]}
           title={siteTitle}
         />

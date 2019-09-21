@@ -10,9 +10,9 @@
 .layout--content > div > ul,
 .layout--content > div > ol,
 .layout--content > div > blockquote,
+.layout--content > div > div.figurenotes,
+.layout--content > div > div.footnotes,
 .layout--content > div > video,
-/* .layout--content > div > div, */
-
 .layout--content > div > .gatsby-highlight,
 .layout--content .column__text,
 .layout--content > div > .Margin--root {
@@ -32,6 +32,8 @@
 
 .layout--home {
   position: sticky;
+  display: inline-block;
   top: 0;
+  padding: 0.5rem;
   z-index: 90;
 }
