@@ -8,5 +8,19 @@ figure {
 }
 
 figcaption {
-  font-size: 0.85em;
+  font-size: 0.85rem;
+  font-style: italic;
+  display: block;
+}
+
+/* md figcaption style */
+.gatsby-resp-image-link + em {
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.wide-grid .gatsby-resp-image-link + em {
+  margin-bottom: 0;
 }
