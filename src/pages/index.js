@@ -2,13 +2,11 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
-import { MDXProvider, MDXTag } from '@mdx-js/tag'
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import { MDXProvider } from "@mdx-js/react"
 
 import Meta from '../components/Meta'
 import Layout from '../components/layout'
-import Gallery from '../components/Gallery'
-import Div from '../components/Div'
 import './styles.css'
 
 class Index extends React.Component {
@@ -36,8 +34,8 @@ class Index extends React.Component {
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
             <MDXProvider components={{}}>
-              <MDXRenderer scope={{ React, MDXTag, Gallery, Div }}>
-                {post.code.body}
+              <MDXRenderer>
+                {post.body}
               </MDXRenderer>
             </MDXProvider>
           </React.Fragment>
@@ -83,9 +81,7 @@ export const pageQuery = graphql`
     post: mdx(fields: {slug: {eq: "root"}}) {
       id
       excerpt
-      code {
-        body
-      }
+      body
       frontmatter {
         title
         author

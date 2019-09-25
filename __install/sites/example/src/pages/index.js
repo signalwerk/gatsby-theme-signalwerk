@@ -28,9 +28,7 @@ export const homeQuery = graphql`
     post: mdx(fields: { slug: { eq: "root" } }) {
       id
       excerpt
-      code {
-        body
-      }
+      body
       frontmatter {
         title
         author

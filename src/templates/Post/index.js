@@ -1,16 +1,13 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
-import { MDXProvider, MDXTag } from '@mdx-js/tag'
+import { graphql } from 'gatsby'
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import { MDXProvider } from "@mdx-js/react"
 
 import get from 'lodash/get'
 
 import Meta from '../../components/Meta'
 import Layout from '../../components/layout'
-import Gallery from '../../components/Gallery'
-import Div from '../../components/Div'
-import Margin from '../../components/Margin'
 
 import './styles.css'
 
@@ -19,7 +16,6 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.post
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const siteDescription = post.excerpt
-    const { previous, next } = this.props.pageContext
 
     return (
       <Layout location={this.props.location}>
@@ -49,8 +45,8 @@ class BlogPostTemplate extends React.Component {
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
         <MDXProvider components={{}}>
-          <MDXRenderer scope={{ React, MDXTag, Gallery, Div, Margin }}>
-            {post.code.body}
+          <MDXRenderer>
+            {post.body}
           </MDXRenderer>
         </MDXProvider>
         <br />
@@ -93,9 +89,7 @@ export const pageQuery = graphql`
     post: mdx(fields: { slug: { eq: $slug } }) {
       id
       excerpt
-      code {
-        body
-      }
+      body
       frontmatter {
         title
         author

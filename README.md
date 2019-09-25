@@ -74,9 +74,11 @@ Follow [this](https://github.com/signalwerk/travis-ci) instructions. And adjust 
 ```sh
 
 
-
+## clean
+```
+rm -rf sites/main/.cache/
+```
 
 ## ToDo
 Add something like
 > Spotted an error or found a typo? This post is written in markdown and you can open a pull request on Github.
-
