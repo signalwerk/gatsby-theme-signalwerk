@@ -1,4 +1,4 @@
-@import "../App/css/colors-var.css";
+@import '../App/css/colors-var.css';
 a {
   text-decoration: none;
   color: $colors--primary;
@@ -8,6 +8,6 @@ a:hover {
 }
 @media print {
   a[href]:after {
-    content: " (" attr(href) ")";
+    content: ' (' attr(href) ')';
   }
 }

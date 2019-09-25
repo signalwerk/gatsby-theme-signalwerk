@@ -29,11 +29,3 @@ blockquote {
     background-color: $colors--primary;
   }
 }
-/*
-blockquote + p {
-  font-size: 90%;
-  font-weight: 700;
-  margin-top: 0.5em;
-  margin-bottom: 1em;
-}
-*/

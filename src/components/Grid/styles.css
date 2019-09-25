@@ -1,4 +1,4 @@
-@import "../App/css/breakpoints-var.css";
+@import '../App/css/breakpoints-var.css';
 @import '../App/css/colors-var.css';
 
 .w60 {
@@ -26,7 +26,7 @@
   height: 100%;
   left: 50%;
   margin-left: -50vw;
-  background-color: rgb(230,232,233);
+  background-color: rgb(230, 232, 233);
   margin-top: 0;
   display: block;
   /* border-top: 1px solid $colors--secondary; */
@@ -68,7 +68,6 @@
   height: 100%;
 }
 
-
 .layout--content .wide-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -95,12 +94,11 @@
     grid-column-end: 7;
   }
 
+  .layout--content .wide-grid > div.col-5to8 {
+    grid-column-start: 5;
+    grid-column-end: 9;
+  }
 
-
-    .layout--content .wide-grid > div.col-5to8 {
-      grid-column-start: 5;
-      grid-column-end: 9;
-    }
   .layout--content .wide-grid > div.col-5to12 {
     grid-column-start: 5;
     grid-column-end: 13;
@@ -110,22 +108,9 @@
     grid-column-start: 7;
     grid-column-end: 13;
   }
-    .layout--content .wide-grid > div.col-9to12 {
-      grid-column-start: 9;
-      grid-column-end: 13;
-    }
-}
 
-/* @media screen and (min-width: 49rem) {
-   .wide-grid {
-    margin-left: -10.36%;
-    width: 120.72%;
+  .layout--content .wide-grid > div.col-9to12 {
+    grid-column-start: 9;
+    grid-column-end: 13;
   }
 }
-
-@media screen and (min-width: 60rem) {
-   .wide-grid {
-    margin-left: -26.125%;
-    width: 152.25%;
-  }
-} */

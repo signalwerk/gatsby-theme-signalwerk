@@ -2,7 +2,6 @@ import React from 'react'
 
 import './styles.css'
 
-
 // https://help.medium.com/hc/en-us/articles/214991667-Read-time
 // http://iovs.arvojournals.org/article.aspx?articleid=2166061
 // german: words: 179, Characters: 920

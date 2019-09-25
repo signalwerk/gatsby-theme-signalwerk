@@ -7,7 +7,7 @@ body {
 }
 
 body {
-  font-feature-settings: "onum" 1, "pnum" 1;
+  font-feature-settings: 'onum' 1, 'pnum' 1;
 }
 
 @supports (font-variant-numeric: oldstyle-nums) {

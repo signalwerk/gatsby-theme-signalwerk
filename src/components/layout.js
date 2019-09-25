@@ -10,7 +10,6 @@ import './Footnotes/styles.css'
 
 import './style.css'
 
-
 import './Headings/styles.css'
 import './Blockquote/styles.css'
 import './List/styles.css'
@@ -21,8 +20,6 @@ import './Table/styles.css'
 import './A/styles.css'
 import './Img/styles.css'
 import './Video/styles.css'
-
-
 
 class Template extends React.Component {
   render() {

@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 class Bio extends React.Component {
   render() {
     return (

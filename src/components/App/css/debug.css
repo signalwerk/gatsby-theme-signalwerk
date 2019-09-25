@@ -1,8 +1,8 @@
-@import "../variables.css";
+@import '../variables.css';
 
 /* debug */
 body::after {
-  content: "mobile";
+  content: 'mobile';
   position: fixed;
   top: 0;
   left: 0;
@@ -12,18 +12,18 @@ body::after {
   background-color: #ccc;
 
   @media (--breakpoint-s) {
-    content: "Size s";
+    content: 'Size s';
   }
 
   @media (--breakpoint-m) {
-    content: "Size m";
+    content: 'Size m';
   }
 
   @media (--breakpoint-l) {
-    content: "Size l";
+    content: 'Size l';
   }
 
   @media (--breakpoint-xl) {
-    content: "Size xl";
+    content: 'Size xl';
   }
 }

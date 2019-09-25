@@ -1,6 +1,5 @@
 @import "./fonts-var.css";
 
-
 @font-face {
   font-family: $fontNames--sans;
   font-style: normal;
@@ -8,7 +7,6 @@
   src: url('../../../../static/fonts/Work-Sans-master/WorkSans-Regular.woff2') format('woff2'),
       url('../../../../static/fonts/Work-Sans-master/WorkSans-Regular.woff') format('woff');
 }
-
 
 @font-face {
   font-family: $fontNames--sans;
@@ -19,14 +17,12 @@
   unicode-range: U+21A9;
 }
 
-
 @font-face {
   font-family: $fontNames--sans;
   font-style: italic;
   font-weight: $fontWeights--default--sans--regular;
   src: url('../../../../static/fonts/Work-Sans-master/WorkSans-Italic.woff2') format('woff2'),
       url('../../../../static/fonts/Work-Sans-master/WorkSans-Italic.woff') format('woff');
-
 }
 
 @font-face {

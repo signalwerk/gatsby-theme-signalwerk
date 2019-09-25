@@ -2,7 +2,8 @@
 
 pre,
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
   background-color: $colors--gray;
   border-radius: 0.2em;
   font-size: 85%;
