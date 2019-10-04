@@ -82,3 +82,12 @@ rm -rf sites/main/.cache/
 ## ToDo
 Add something like
 > Spotted an error or found a typo? This post is written in markdown and you can open a pull request on Github.
+
+
+
+### ToDo
+
+* Adjust Code-Highlighting
+  * [GHColors by aviaryan](https://github.com/PrismJS/prism-themes/blob/master/themes/prism-ghcolors.css)
+  * [prismjs-material-theme](https://dutchenkooleg.github.io/prismjs-material-theme/)
+  * [Theme by LukeAskew](https://github.com/LukeAskew/prism-github)
