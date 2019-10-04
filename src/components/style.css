@@ -13,6 +13,7 @@
 .layout--content > blockquote,
 .layout--content > div.figurenotes,
 .layout--content > div.footnotes,
+.layout--content > div.box,
 .layout--content > video,
 .layout--content > .gatsby-highlight,
 .layout--content .column__text,

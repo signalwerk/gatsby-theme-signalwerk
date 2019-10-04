@@ -7,6 +7,21 @@ blockquote {
   margin-top: 1em;
   margin-bottom: 0.5em;
 
+  margin-left: 1.25em;
+  margin-right: 1.25em;
+  & + em {
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-style: normal;
+  }
+
   .layout--content > div > & {
     padding-left: calc(2% + 2em);
 

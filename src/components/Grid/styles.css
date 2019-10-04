@@ -9,6 +9,14 @@
   position: relative;
 }
 
+.box {
+  background-color: rgb(230, 232, 233);
+  padding-top: 0.9rem;
+  padding-right: 1.4rem;
+  padding-bottom: 1rem;
+  padding-left: 1.4rem;
+}
+
 .wide-grid.space {
   margin-top: 2rem;
   margin-bottom: 2rem;

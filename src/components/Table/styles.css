@@ -18,7 +18,7 @@ th {
 }
 
 tr {
-  border-bottom: 0.12rem solid #ccc;
+  border-bottom: 0.05rem solid #ccc;
 }
 @media print {
   tr {
