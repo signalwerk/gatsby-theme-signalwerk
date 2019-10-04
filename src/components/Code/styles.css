@@ -4,7 +4,7 @@ pre,
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-  background-color: $colors--gray;
+  /* background-color: $colors--code-bg; */
   border-radius: 0.2em;
   font-size: 85%;
 }
