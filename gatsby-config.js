@@ -9,11 +9,17 @@ module.exports = ({ root }) => ({
         extensions: ['.mdx', '.md'],
 
         gatsbyRemarkPlugins: [
+          `gatsby-remark-table-of-contents`,
+          `gatsby-remark-slug`,
+          // {
+          //   // Standard plugin with options example
+          //   resolve: require.resolve(`./src/plugins/gatsby-remark-table-of-contents/`),
+          // },
           {
             resolve: `gatsby-remark-footnotes`,
             options: {
-              // footnoteBackRefPreviousElementDisplay: 'inline',
-              // footnoteBackRefDisplay: 'inline',
+              footnoteBackRefPreviousElementDisplay: 'inline',
+              footnoteBackRefDisplay: 'inline',
               footnoteBackRefInnerText: '^', // Defaults to: "↩"
               //use if you want the Wikipedia style ^ link without an underline beneath it
               // footnoteBackRefAnchorStyle: `text-decoration: none;`,
@@ -40,6 +46,11 @@ module.exports = ({ root }) => ({
           {
             resolve: 'gatsby-remark-prismjs',
           },
+          // {
+          //   resolve: 'gatsby-remark-table-of-contents',
+          // },
+
+
         ],
       },
     },
