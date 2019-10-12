@@ -9,7 +9,15 @@ module.exports = ({ root }) => ({
         extensions: ['.mdx', '.md'],
 
         gatsbyRemarkPlugins: [
-          `gatsby-remark-table-of-contents`,
+          {
+            resolve: `gatsby-remark-table-of-contents`,
+            options: {
+              skip: "Inhaltsverzeichnis|Table of Contents",
+              tight: false,
+              fromHeading: 2,
+              toHeading: 6
+            },
+          },
           `gatsby-remark-slug`,
           // {
           //   // Standard plugin with options example
