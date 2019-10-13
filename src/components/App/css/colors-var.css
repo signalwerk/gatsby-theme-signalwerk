@@ -1,3 +1,6 @@
-$colors--primary: #154281;
+$colors--blue: #0054a2;
+$colors--green: #006984;
+
+$colors--primary: $colors--blue;
 $colors--secondary: #627a87;
 $colors--gray: #e6e8ea;
