@@ -15,7 +15,6 @@ import './Blockquote/styles.css'
 import './List/styles.css'
 import './Code/styles.css'
 import './Code/prism.css'
-import './Grid/styles.css'
 import './P/styles.css'
 import './Table/styles.css'
 import './A/styles.css'
@@ -30,13 +29,13 @@ class Template extends React.Component {
 
     if (location.pathname !== rootPath) {
       header = (
-        <h3 className="layout--home">
+        <h3 className="layout__home">
           <Link to={'/'}>← Home</Link>
         </h3>
       )
     }
     return (
-      <div className="layout--content">
+      <div className="layout__content">
         {header}
         {children}
       </div>

@@ -15,6 +15,7 @@ blockquote {
     margin-bottom: 1.5rem;
     display: block;
   }
+
   h1,
   h2,
   h3,
@@ -22,15 +23,15 @@ blockquote {
     font-style: normal;
   }
 
-  .layout--content > div > & {
-    padding-left: calc(2% + 2em);
+  .layout__content > div > & {
+    padding-left: calc(4% + 2em);
 
     @media (--breakpoint-s) {
       padding-left: calc(20rem + 2em);
     }
 
     @media (--breakpoint-l) {
-      padding-left: calc(2% + 2em);
+      padding-left: calc(4% + 2em);
     }
   }
 

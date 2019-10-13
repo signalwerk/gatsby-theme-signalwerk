@@ -1,6 +1,7 @@
 img {
   width: 100%;
   height: auto;
+  display: block;
 }
 
 figure {
@@ -13,14 +14,20 @@ figcaption {
   display: block;
 }
 
-/* md figcaption style */
-.gatsby-resp-image-link + em {
-  font-size: 0.85rem;
-  font-style: italic;
-  margin-bottom: 1.5rem;
-  display: block;
+.gatsby-resp-image-wrapper {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-.wide-grid .gatsby-resp-image-link + em {
-  margin-bottom: 0;
+/* md figcaption style */
+.gatsby-resp-image-wrapper + em {
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  display: block;
 }
+/*
+.wide-grid .gatsby-resp-image-wrapper + em {
+  margin-bottom: 0;
+} */

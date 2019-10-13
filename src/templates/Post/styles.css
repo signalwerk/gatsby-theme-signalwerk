@@ -1,7 +1,7 @@
 @import '../../components/App/css/colors-var.css';
 @import '../../components/App/css/breakpoints-var.css';
 
-.layout--content .post-single__lead {
+.layout__content .post-single__lead {
   color: $colors--secondary;
   padding-left: calc(2% + 1.3em);
   font-size: 1.2rem;
@@ -13,9 +13,4 @@
     padding-left: calc(2% + 4.3em);
     font-size: 1.3rem;
   }
-}
-
-.gatsby-resp-image-link {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }

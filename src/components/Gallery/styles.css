@@ -4,7 +4,7 @@
 .Gallery--root {
   margin-bottom: 2rem;
 }
-.Gallery--root .gatsby-resp-image-link {
+.Gallery--root .gatsby-resp-image-wrapper {
   margin-bottom: 0rem;
 }
 
