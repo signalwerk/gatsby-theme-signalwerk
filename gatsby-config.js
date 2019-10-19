@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = ({ root }) => ({
-  pathPrefix: '/gatsby-starter-blog',
+  pathPrefix: '/',
   plugins: [
     {
       resolve: `gatsby-plugin-mdx`,
