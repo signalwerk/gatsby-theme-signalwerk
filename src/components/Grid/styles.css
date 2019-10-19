@@ -10,8 +10,13 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.3rem;
+
+  @media (--breakpoint-s) {
+    padding-top: 1.5rem;
+    padding-bottom: .7rem;
+  }
 }
 
 .Grid__inner {
