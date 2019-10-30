@@ -2,20 +2,23 @@
 @import '../App/css/colors-var.css';
 
 .Grid {
+  margin-top: 0.9rem;
+  margin-bottom: 0.9rem;
+  @media (--breakpoint-s) {
+    margin-top: 1.8rem;
+    margin-bottom: 1.8rem;
+  }
 }
 
 .Grid--fill-default {
   background-color: rgb(230, 232, 233);
-
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 
   padding-top: 0.8rem;
   padding-bottom: 0.3rem;
 
   @media (--breakpoint-s) {
     padding-top: 1.5rem;
-    padding-bottom: .7rem;
+    padding-bottom: 0.7rem;
   }
 }
 
