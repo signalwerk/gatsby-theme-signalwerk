@@ -1,12 +1,51 @@
-ul {
+@import '../App/css/colors-var.css';
+
+ol, ul {
   margin-left: 0;
-  padding-left: 1rem;
+  padding-left: 0;
+
+  list-style: none;
+}
+ol {
+  counter-reset: my-awesome-counter;
+
 }
 
-li {
+ol li {
+  counter-increment: my-awesome-counter;
+  margin-left: 1.5em;
+}
+
+ul li {
+  margin-left: 1em;
 }
 
 li p {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+ul li:before {
+  content: '';
+  display: inline-block;
+  width: .8em;
+  height: .1em;
+  min-height: 2px;
+  margin-left: -1em;
+  margin-right: .5em;
+  transform: translateY(-0.28em);
+  background-color: $colors--secondary;
+}
+
+
+
+
+ol li::before {
+  display: inline-block;
+  content: counter(my-awesome-counter) ". ";
+  color: $colors--secondary;
+  width: 1em;
+  padding-right: 0.5em;
+  margin-left: -1.5em;
+  text-align: right;
 }
