@@ -20,6 +20,7 @@ $margin--font--scale: 0.85;
   .Margin--root {
     height: 0;
     overflow: visible;
+    transform: translateY(0.9em);
   }
 }
 .Margin--root {

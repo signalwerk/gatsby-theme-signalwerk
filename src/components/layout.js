@@ -7,6 +7,7 @@ import './App/css/fonts.css'
 import './Html/styles.css'
 import './Body/styles.css'
 import './Footnotes/styles.css'
+import './Hr/styles.css'
 
 import './style.css'
 

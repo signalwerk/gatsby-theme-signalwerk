@@ -1,0 +1,15 @@
+@import '../App/css/colors-var.css';
+hr {
+  display: block;
+  height: 0;
+  border: 0;
+  margin: 1rem 0;
+  overflow: visible;
+  &:after {
+    content: '';
+    display: block;
+    height: 0.2rem;
+    background-color: $colors--secondary;
+    padding: 0;
+  }
+}
