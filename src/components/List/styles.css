@@ -58,6 +58,6 @@ ol > li::before {
   float: left;
 }
 
-ol ol > li {
-  counter-reset: li-1;
+ol ol > li::before {
+  content: counter(li-1) '. ';
 }
