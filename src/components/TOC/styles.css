@@ -1,0 +1,11 @@
+.toc + ul,
+.toc ul {
+  > li {
+    margin-left: 0;
+  }
+  li {
+    &:before {
+      display: none;
+    }
+  }
+}
