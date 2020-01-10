@@ -1,11 +1,16 @@
+@import '../App/css/fonts-var.css';
+
 .toc + ul,
-.toc ul {
-  > li {
-    margin-left: 0;
-  }
+.toc > ul {
   li {
     &:before {
       display: none;
     }
+    font-weight: $fontWeights--default--sans--regular;
+  }
+
+  > li {
+    margin-left: 0;
+    font-weight: $fontWeights--default--sans--bold;
   }
 }
