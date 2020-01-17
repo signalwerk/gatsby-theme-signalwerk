@@ -48,6 +48,25 @@ module.exports = ({ root }) => ({
       },
     },
     `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          'gatsby-remark-copy-linked-files',
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1800,
+              backgroundColor: `transparent`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+          },
+          'gatsby-remark-prismjs',
+        ],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
