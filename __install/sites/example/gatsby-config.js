@@ -1,5 +1,6 @@
 module.exports = {
   // pathPrefix: `/blog`,
+  pathPrefix: `/`,
 
   __experimentalThemes: [{
     resolve: 'gatsby-theme-signalwerk',
