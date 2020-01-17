@@ -7,6 +7,14 @@
   background-color: black;
 }
 
+.Box--maxWidth-60 .Box__inner {
+  max-width: 60%;
+}
+
+.Box--line-default {
+  border: 1px solid #ccc;
+}
+
 /* 16:9 ratio */
 .Box--ratio-16-9 .Box__wrapper {
   padding-bottom: 56.25%;
@@ -39,4 +47,8 @@
   padding-right: 1.4rem;
   padding-bottom: 1rem;
   padding-left: 1.4rem;
+}
+
+.Box--bgColor-white {
+  background-color: white;
 }

@@ -1,7 +1,7 @@
 ---
-title: New Beginnings
+title: Title
 author: "Stefan Huber"
-date: "2017-11-11"
+date: "2022-11-11"
 layout: post
 draft: false
 hideInMenu: false
@@ -9,126 +9,334 @@ path: "/posts/example/"
 tags:
   - "TagOne"
   - "TagTwo"
-description: "bla bla bla... "
+description: "Lead · Lead of the page"
 ---
 
+import Margin from 'gatsby-theme-signalwerk/src/components/Margin';
+import Grid from 'gatsby-theme-signalwerk/src/components/Grid';
+import Column from 'gatsby-theme-signalwerk/src/components/Column';
+import Box from 'gatsby-theme-signalwerk/src/components/Box';
+
+## Intro
+The template behaves like normal markdown text. However, there are some advanced functions. For more information see [Github](https://github.com/signalwerk/gatsby-theme-signalwerk).
+
+
+## Table of Contents
+```toc
+exclude:
+  - Table of Contents
+from-heading: 2
+to-heading: 6
+```
+
+
+## Table of contents (element)
+The table of contents can be controlled via a `toc` (Table of Contents)  code block.
+* `exclude` – what title should not appear in the table of contents
+* `from-heading` – first heading to be output. `2` = `h2`
+* `to-heading` – last heading to be output `6` = `h6`
+
+
+### Code
+
+````md
+```toc
+exclude:
+  - Table of Contents
+from-heading: 2
+to-heading: 6
+```
+````
+
+### View
+see above
+<!--
+```toc
+exclude: Inhaltsverzeichnis
+from-heading: 2
+to-heading: 6
+``` -->
+
+
+
+## Text
+<Margin>
+
+### Marginal columns
+
+Marginal columns · Text in `<Margin></Margin>`-Tags.
+
+</Margin>
+
+Text · Normal text can be written as normal Markdown.
+
+
+## Lists
+### Code
+
+````md
+* Item A
+* Item B
+* Item C
+````
+
+### View
+* Item A
+* Item B
+* Item C
+
+## Numeric Lists
+
+### Code
+
+````md
+1. Item 1
+2. Item 2
+3. Item 3
+````
+
+### View
+
+1. Item 1
+2. Item 2
+3. Item 3
+
+##  Code
+
+Code can be entered either as block or inline.
+
+
+### Code
+````md
+Inline `code`
+
+```js
+var kk = "kk";
+```
+````
+### View
+
+Inline `code`
 
 ```js
 var kk = "kk";
 ```
 
-Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean. A small river named
-Duden flows by their place and supplies it with the necessary regelialia.
 
-## On deer horse aboard tritely yikes and much
 
-The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.
+## Footnotes
 
-* This however showed weasel
-* Well uncritical so misled
-  * this is very interesting
-* Goodness much until that fluid owl
+Text with footnotes can either be made with references, as usual in Markdown:
 
-When she reached the first hills of the **Italic Mountains**, she had a last
-view back on the skyline of her hometown _Bookmarksgrove_, the headline of
-[Alphabet Village](http://google.com) and the subline of her own road, the Line
-Lane. Pityful a rethoric question ran over her cheek, then she continued her
-way. On her way she met a copy.
+### Code
+```md
+_«Zitat A»_[^quote-one]
 
-### Overlaid the jeepers uselessly much excluding
+[^quote-one]: ...
+```
 
-But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with
-[Longe and Parole](http://google.com) and dragged her into their agency, where
-they abused her for their projects again and again. And if she hasn’t been
-rewritten, then they are still using her.
+or inline
+```md
+_«Zitat B»_[^hier der Text]
+```
 
-> Far far away, behind the word mountains, far from the countries Vokalia and
-> Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-> right at the coast of the Semantics, a large language ocean.
+### View
+_«Zitat A»_[^quote-one]
+_«Zitat B»_[^hier der Text]
 
-It is a paradisematic country, in which roasted parts of sentences fly into your
-mouth. Even the all-powerful Pointing has no control about the blind texts it is
-an almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar.
 
-### According a funnily until pre-set or arrogant well cheerful
+## List of figures
 
-The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.
+If you want to maintain the illustrations (or other directories) outside the footnotes, you can mark the footnotes with a group prefix (`:group:`):
 
-1.  So baboon this
-2.  Mounted militant weasel gregariously admonishingly straightly hey
-3.  Dear foresaw hungry and much some overhung
-4.  Rash opossum less because less some amid besides yikes jeepers frenetic
-    impassive fruitlessly shut
 
-When she reached the first hills of the Italic Mountains, she had a last view
-back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet
-Village and the subline of her own road, the Line Lane. Pityful a rethoric
-question ran over her cheek, then she continued her way. On her way she met a
-copy.
+### Code
+```md
+_Bild A_[^:fig:one]
 
-> The copy warned the Little Blind Text, that where it came from it would have
-> been rewritten a thousand times and everything that was left from its origin
-> would be the word "and" and the Little Blind Text should turn around and
-> return to its own, safe country.
+[^:fig:one]: ...
+```
 
-But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with Longe and Parole
-and dragged her into their agency, where they abused her for their projects
-again and again. And if she hasn’t been rewritten, then they are still using
-her. Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts.
+or inline
+```md
+_Fig. B_[^:fig:hier der Text]
+```
+### View
 
-#### Silent delightfully including because before one up barring chameleon
+_Fig. A_[^:fig:one]
+_Fig. B_[^:fig:hier der Text]
 
-Separated they live in Bookmarksgrove right at the coast of the Semantics, a
-large language ocean. A small river named Duden flows by their place and
-supplies it with the necessary regelialia. It is a paradisematic country, in
-which roasted parts of sentences fly into your mouth.
 
-Even the all-powerful Pointing has no control about the blind texts it is an
-almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox
-advised her not to do so, because there were thousands of bad Commas, wild
-Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.
+## Quotes
+Paragraphs with quotations can be specially marked.
 
-##### Wherever far wow thus a squirrel raccoon jeez jaguar this from along
+### Code
+```md
+> Text here.[^quote-one]
 
-She packed her seven versalia, put her initial into the belt and made herself on
-the way. When she reached the first hills of the Italic Mountains, she had a
-last view back on the skyline of her hometown Bookmarksgrove, the headline of
-Alphabet Village and the subline of her own road, the Line Lane. Pityful a
-rethoric question ran over her cheek, then she continued her way. On her way she
-met a copy.
+```
 
-###### Slapped cozy a that lightheartedly and far
+### View
+> Text here.[^quote-one]
 
-The copy warned the Little Blind Text, that where it came from it would have
-been rewritten a thousand times and everything that was left from its origin
-would be the word "and" and the Little Blind Text should turn around and return
-to its own, safe country. But nothing the copy said could convince her and so it
-didn’t take long until a few insidious Copy Writers ambushed her, made her drunk
-with Longe and Parole and dragged her into their agency, where they abused her
-for their projects again and again.
+
+## Pictures
+If there is an empathized text (`*text*`) directly below an image, this text is given the formatting for captions.
 
 
 
 
+### Code
+```md
+![Cat](./img/header.jpg)
+*Wow so miau. Much cute.[^:fig:pic-source]*
+```
 
-<div class="column__text">
-<div class="box box--bg">
+### View
+![Cat](./img/header.jpg)
+*Wow so miau. Much cute.[^:fig:pic-source]*
 
-### Box
-Text
 
-</div>
-</div>
+## Video
+Videos should be packed into a responsive `Box`. The ratio can be 16:9, 4:3 or 3:2.
+
+### Code
+```md
+<Box ratio="16:9">
+
+<iframe src="https://player.vimeo.com/video/169809377" frameborder="0"></iframe>
+
+</Box>
+```
+
+### View
+
+<Box ratio="16-9">
+
+<iframe src="https://player.vimeo.com/video/169809377" frameborder="0"></iframe>
+
+</Box>
+
+
+
+
+## Grid – full width
+### Code
+
+```md
+<Grid>
+
+![Cat](./img/header.jpg)
+*Hello Cat[^:fig:pic-source]*
+
+</Grid>
+```
+
+### View
+
+<Grid>
+
+![Cat](./img/header.jpg)
+*Hello Cat[^:fig:pic-source]*
+
+</Grid>
+
+## Grid – full width with background
+
+### Code
+
+```html
+<Grid background>
+
+![Cat](./img/header.jpg)
+*Hello Cat[^:fig:pic-source]*
+
+</Grid>
+```
+
+### View
+
+
+<Grid background>
+
+![Cat](./img/header.jpg)
+*Hello Cat[^:fig:pic-source]*
+
+</Grid>
+
+
+## Grid – with columns
+
+### Code
+```md
+<Grid>
+<Column start="1" end="7">
+
+### Cat Column A
+...
+
+</Column>
+<Column start="7" end="13">
+
+### Cat Column B
+...
+
+</Column>
+</Grid>
+```
+
+### View
+
+<Grid>
+<Column start="1" end="7">
+
+### Cat Column A
+![Cat](./img/header.jpg)
+*Hello Cat[^:fig:pic-source]*
+
+</Column>
+<Column start="7" end="13">
+
+### Cat Column B
+![Cat](./img/header.jpg)
+*Hello Cat[^:fig:pic-source]*
+
+</Column>
+</Grid>
+
+
+
+
+<!-- references text-->
+
+<!--
+Vorname Nachname, [Titel der Seite](https://www.google.com/) (Abrufdatum: dd. mm. yyyy).
+Vorname Nachname, Buchtitel, Auflage, Verlag, Erscheinungsort Jahr, erste Seite – letzte Seite.
+-->
+
+[^quote-one]: Example for footnote
+
+<!-- references figures-->
+[^:fig:one]: Example for list of figures.
+[^:fig:pic-source]: Example of [lorempixel.com](http://lorempixel.com/800/600/cats/1)
+
+
+
+## References
+```references
+```
+
+## List of figures
+(Can also be maintained as references)
+
+```references
+# gets repalced with footnotes
+group-include: fig
+
+inline-link-prefix: 'Fig. '
+
+reference-link-prefix: '↑ Fig. '
+reference-link-suffix: ''
+
+reference-text-suffix: ' – '
+```
