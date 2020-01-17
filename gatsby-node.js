@@ -23,7 +23,7 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            allMarkdownRemark(
+            allMdx(
               sort: { fields: [frontmatter___date], order: DESC }
               limit: 1000
               filter: { frontmatter: { draft: { ne: true } } }
@@ -52,7 +52,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         // Create post pages.
-        const posts = result.data.allMarkdownRemark.edges
+        const posts = result.data.allMdx.edges
 
         _.each(posts, (post, index) => {
           const previous =

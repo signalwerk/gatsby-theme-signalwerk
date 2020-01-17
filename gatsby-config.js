@@ -4,6 +4,13 @@ module.exports = ({ root }) => ({
   pathPrefix: '/',
   plugins: [
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `src/pages`,
+        name: 'pages',
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: ['.mdx', '.md'],
@@ -22,7 +29,6 @@ module.exports = ({ root }) => ({
               toHeading: 6,
             },
           },
-          `gatsby-remark-slug`,
           {
             resolve: 'gatsby-remark-copy-linked-files',
           },
@@ -42,54 +48,8 @@ module.exports = ({ root }) => ({
       },
     },
     `gatsby-plugin-postcss`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `src/pages`,
-        name: 'pages',
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          'gatsby-remark-copy-linked-files',
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1800,
-              backgroundColor: `transparent`,
-            },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-          },
-          'gatsby-remark-prismjs',
-        ],
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
-    `gatsby-plugin-feed`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Blog`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/assets/gatsby-icon.png`,
-      },
-    },
-    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
   ],
 })
