@@ -31,7 +31,7 @@ class Template extends React.Component {
 
     if (location.pathname !== rootPath) {
       header = (
-        <h3 className="layout__home">
+        <h3 className="layout__home layout--wide">
           <Link to={'/'}>← Home</Link>
         </h3>
       )
