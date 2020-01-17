@@ -130,19 +130,19 @@ Text with footnotes can either be made with references, as usual in Markdown:
 
 ### Code
 ```md
-_«Zitat A»_[^quote-one]
+_«Quote A»_[^quote-one]
 
 [^quote-one]: ...
 ```
 
 or inline
 ```md
-_«Zitat B»_[^hier der Text]
+_«Quote B»_[^hier der Text]
 ```
 
 ### View
-_«Zitat A»_[^quote-one]
-_«Zitat B»_[^hier der Text]
+_«Quote A»_[^quote-one]
+_«Quote B»_[^hier der Text]
 
 
 ## List of figures
