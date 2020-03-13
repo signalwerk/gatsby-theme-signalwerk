@@ -62,7 +62,6 @@ ol > li::before {
   content: counter(li-0, upper-alpha);
 }
 
-
 ol ol > li::before {
   content: counter(li-1) '. ';
 }
