@@ -1,9 +1,10 @@
-import React from 'react'
+import  React from 'react'
 import { graphql } from 'gatsby'
 
-import Index from 'gatsby-theme-signalwerk/src/pages'
+import Index from "gatsby-theme-signalwerk/src/pages";
 
-class PageIndex extends React.Component {
+
+class IndexRoot extends React.Component {
   render() {
     return (
       <React.Fragment>
@@ -13,7 +14,7 @@ class PageIndex extends React.Component {
   }
 }
 
-export default PageIndex
+export default IndexRoot
 
 export const homeQuery = graphql`
   query {
@@ -25,7 +26,7 @@ export const homeQuery = graphql`
         authorUrl
       }
     }
-    post: mdx(fields: { slug: { eq: "root" } }) {
+    post: mdx(fields: {slug: {eq: "root"}}) {
       id
       excerpt
       body
@@ -38,26 +39,6 @@ export const homeQuery = graphql`
       }
       wordCount {
         words
-      }
-    }
-    posts: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { ne: true }, hideInMenu: { ne: true } } }
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "DD MMMM, YYYY")
-            title
-            author
-            tags
-            description
-          }
-        }
       }
     }
   }

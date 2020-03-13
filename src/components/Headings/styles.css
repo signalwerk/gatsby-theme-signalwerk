@@ -20,6 +20,7 @@ h1,
   font-size: calc($fontSizes--default--h1 * 1rem);
   margin-top: 0.5em;
   margin-bottom: 1.25em;
+  hyphens: none;
 
   @media (--breakpoint-s) {
     font-size: calc($fontSizes--s--h1 * 1rem);

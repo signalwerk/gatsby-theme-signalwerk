@@ -14,6 +14,7 @@ import './style.css'
 import './Headings/styles.css'
 import './Blockquote/styles.css'
 import './List/styles.css'
+import './TOC/styles.css'
 import './Code/styles.css'
 import './Code/prism.css'
 import './P/styles.css'
@@ -30,7 +31,7 @@ class Template extends React.Component {
 
     if (location.pathname !== rootPath) {
       header = (
-        <h3 className="layout__home">
+        <h3 className="layout__home layout--wide">
           <Link to={'/'}>← Home</Link>
         </h3>
       )

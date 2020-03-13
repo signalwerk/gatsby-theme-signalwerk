@@ -93,7 +93,7 @@ export const pageQuery = graphql`
         words
       }
     }
-    posts: allMarkdownRemark(
+    posts: allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { draft: { ne: true }, hideInMenu: { ne: true } } }
     ) {
