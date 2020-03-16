@@ -19,14 +19,7 @@
   position: sticky;
   top: 0;
   padding: 0.5rem;
-  padding-bottom: 4rem;
   z-index: 90;
   background-color: white;
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.1) 30%,
-    rgba(255, 255, 255, 1) 60%,
-    rgba(255, 255, 255, 1) 100%
-  );
+
 }

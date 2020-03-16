@@ -56,7 +56,7 @@ class Index extends React.Component {
                   />
                 </div>
                 {(node.frontmatter.description && (
-                  <p>{node.frontmatter.description}</p>
+                  <p className="Index--description">{node.frontmatter.description}</p>
                 )) || <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />}
               </div>
             )
