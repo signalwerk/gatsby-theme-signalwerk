@@ -8,6 +8,7 @@
 # Used
 * [Typesetting Blog](https://signalwerk.github.io/typesetting/) [→ Repo](https://github.com/signalwerk/typesetting/)
 * [Walz Blog](https://signalwerk.github.io/walz.alexanderboenninger/) [→ Repo](https://github.com/signalwerk/walz.alexanderboenninger/)
+* [Thesis – Interaction Design Zurich](https://thesis.logrinto.ch/) [→ Repo](https://github.com/logrinto/IAD2017.thesis)
 
 ## Install in a new repo
 ```sh
