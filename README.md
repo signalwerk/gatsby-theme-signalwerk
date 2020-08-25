@@ -64,7 +64,8 @@ yarn develop
 # or
 yarn build
 ```
-
+### Todo
+* [Check themeing of water.css](https://github.com/kognise/water.css)
 
 ### Travis CI
 Follow [this](https://github.com/signalwerk/travis-ci) instructions. And adjust `DEPLOY_DIR` in `.travis.yml`.
