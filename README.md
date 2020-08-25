@@ -70,9 +70,9 @@ yarn build
 ### Travis CI
 Follow [this](https://github.com/signalwerk/travis-ci) instructions. And adjust `DEPLOY_DIR` in `.travis.yml`.
 
-```
-- DEPLOY_DIR: "./sites/blog/public"
 ```sh
+- DEPLOY_DIR: "./sites/blog/public"
+```
 
 
 ## clean
