@@ -17,7 +17,7 @@ class Box extends React.Component {
           this.props.ratio
             ? `Box--ratio Box--ratio-${this.props.ratio.replace(':', '-')}`
             : ''
-        }`}
+        } ${this.props.className}`}
       >
         <div className="Box__wrapper">
           <div className="Box__inner">{this.props.children}</div>
