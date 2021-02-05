@@ -40,6 +40,7 @@ cd ../../../..
 cd ./sites/example/src/pages
 wget https://raw.githubusercontent.com/signalwerk/gatsby-theme-signalwerk/master/__install/sites/example/src/pages/404.js
 wget https://raw.githubusercontent.com/signalwerk/gatsby-theme-signalwerk/master/__install/sites/example/src/pages/index.js
+wget https://raw.githubusercontent.com/signalwerk/gatsby-theme-signalwerk/master/__install/sites/example/src/pages/root.md
 cd ../../../..
 
 
@@ -49,9 +50,6 @@ cd ./sites/example/src/pages/-example/
 
 wget https://raw.githubusercontent.com/signalwerk/gatsby-theme-signalwerk/master/__install/sites/example/src/pages/-example/index.md
 cd ../../../../..
-
-# add travis
-wget https://raw.githubusercontent.com/signalwerk/gatsby-theme-signalwerk/master/__install/.travis.yml
 
 ```
 

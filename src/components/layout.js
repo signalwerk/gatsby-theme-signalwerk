@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React from 'react'
 import { Link } from 'gatsby'
+// import Navigation from './Navigation'
 
 import './App/css/fonts-var.css'
 import './App/css/fonts.css'
@@ -35,6 +36,7 @@ class Template extends React.Component {
           <Link to={'/'}>← Home</Link>
         </h3>
       )
+      // header = Navigation
     }
     return (
       <div className="layout__content">
