@@ -1,18 +1,14 @@
-import React from 'react'
-import './styles.css'
+import React from "react";
+import "./styles.css";
 
-class Column extends React.Component {
-  render() {
-    return (
-      <div
-        className={`Column ${
-          this.props.start ? `Column--start-${this.props.start}` : ''
-        } ${this.props.end ? `Column--end-${this.props.end}` : ''}`}
-      >
-        <div className="Column--inner">{this.props.children}</div>
-      </div>
-    )
-  }
-}
+const Column = ({ children, start, end, className }) => (
+  <div
+    className={`Column ${start ? `Column--start-${start}` : ""} ${
+      end ? `Column--end-${end}` : ""
+    } ${className}`}
+  >
+    <div className="Column--inner">{children}</div>
+  </div>
+);
 
-export default Column
+export default Column;

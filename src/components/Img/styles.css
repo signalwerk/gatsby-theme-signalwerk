@@ -4,6 +4,18 @@ img {
   display: block;
 }
 
+.img--upscale .gatsby-resp-image-wrapper {
+  max-width: none !important;
+}
+
+.img--upscale-pixelated .gatsby-resp-image-wrapper {
+  max-width: none !important;
+  img {
+    image-rendering: pixelated;
+  }
+}
+
+
 figure {
   margin: 0;
 }

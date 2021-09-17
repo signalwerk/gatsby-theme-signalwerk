@@ -5,7 +5,7 @@
 
 $margin--font--scale: 0.85;
 
-.Margin--root {
+.Margin {
   font-size: calc($margin--font--scale * 1em);
 
   margin-top: 0.8rem;
@@ -17,13 +17,13 @@ $margin--font--scale: 0.85;
 }
 
 @media (--breakpoint-s) {
-  .Margin--root {
+  .Margin {
     height: 0;
     overflow: visible;
     transform: translateY(0.9em);
   }
 }
-.Margin--root {
+.Margin {
   h1,
   .h1 {
     font-size: calc($fontSizes--default--h1 * $margin--font--scale * 1rem);
@@ -61,7 +61,7 @@ $margin--font--scale: 0.85;
   }
 }
 
-.Margin--root .Margin--inner {
+.Margin .Margin__inner {
   /* max-width: 20rem; */
 
   width: calc(100% - 1rem);
@@ -73,10 +73,9 @@ $margin--font--scale: 0.85;
 
   border-top: 0.2rem solid $colors--secondary;
   border-bottom: 1px solid $colors--secondary;
-  background-color: rgb(230, 232, 233); /* rgba(98, 122, 135, .1)*/
 
-  > h3:first-child,
-  > .h3:first-child {
+  & > h3:first-child,
+  & > .h3:first-child {
     margin-top: 0;
   }
 
@@ -85,4 +84,8 @@ $margin--font--scale: 0.85;
     margin-top: 0.5rem;
     margin-left: -20rem;
   }
+}
+
+.Margin--fill-default .Margin__inner {
+  background-color: rgb(230, 232, 233); /* rgba(98, 122, 135, .1)*/
 }

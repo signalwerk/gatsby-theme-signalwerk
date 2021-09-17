@@ -6,11 +6,11 @@
     &:before {
       display: none;
     }
-    font-weight: $fontWeights--default--sans--regular;
+    /* font-weight: $fontWeights--default--sans--regular; */
   }
 
   > li {
     margin-left: 0;
-    font-weight: $fontWeights--default--sans--bold;
+    /* font-weight: $fontWeights--default--sans--bold; */
   }
 }

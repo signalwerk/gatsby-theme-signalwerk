@@ -1,18 +1,14 @@
-import React from 'react'
-import './styles.css'
+import React from "react";
+import "./styles.css";
 
-class Grid extends React.Component {
-  render() {
-    return (
-      <div
-        className={`Grid layout--wide ${
-          this.props.background ? 'Grid--fill-default' : 'Grid--fill-no'
-        }`}
-      >
-        <div className="Grid__inner">{this.props.children}</div>
-      </div>
-    )
-  }
-}
+const Grid = ({ children, background, className }) => (
+  <div
+    className={`Grid layout--wide ${
+      background ? "Grid--fill-default" : "Grid--fill-no"
+    } ${className}`}
+  >
+    <div className="Grid__inner">{children}</div>
+  </div>
+);
 
-export default Grid
+export default Grid;

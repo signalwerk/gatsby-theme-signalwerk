@@ -1,4 +1,4 @@
-@import '../App/css/breakpoints-var.css';
+@import "../App/css/breakpoints-var.css";
 
 .Box--ratio .Box__wrapper {
   position: relative;
@@ -9,6 +9,14 @@
 
 .Box--maxWidth-60 .Box__inner {
   max-width: 60%;
+}
+
+.Box--maxWidth-70 .Box__inner {
+  max-width: 70%;
+}
+
+.Box--maxWidth-75 .Box__inner {
+  max-width: 75%;
 }
 
 .Box--line-default {

@@ -14,7 +14,7 @@ const PostPage = ({ data }) => {
   const siteDescription = get(data, "site.siteMetadata.description");
 
   const post = get(data, "post");
-  const isRoot = get(data, "post.fields.URI") == "root";
+  const isRoot = get(data, "post.fields.URI") === "root";
 
   return (
     <React.Fragment>
