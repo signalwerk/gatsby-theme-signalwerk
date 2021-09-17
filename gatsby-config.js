@@ -1,19 +1,27 @@
-const path = require('path')
+const path = require("path");
 
 module.exports = ({ root }) => ({
-  pathPrefix: '/',
+  pathPrefix: "/",
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `src/pages`,
-        name: 'pages',
+        path: `${__dirname}/src/pages/`,
+      },
+      __key: "pages",
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `content/`,
       },
     },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: ['.mdx', '.md'],
+        extensions: [".mdx", ".md"],
 
         gatsbyRemarkPlugins: [
           {
@@ -23,21 +31,21 @@ module.exports = ({ root }) => ({
           {
             resolve: `gatsby-remark-table-of-contents`,
             options: {
-              exclude: 'Inhaltsverzeichnis|Table of Contents',
+              exclude: "Inhaltsverzeichnis|Table of Contents",
               tight: false,
               fromHeading: 2,
               toHeading: 6,
             },
           },
           {
-            resolve: 'gatsby-remark-copy-linked-files',
+            resolve: "gatsby-remark-copy-linked-files",
           },
           `gatsby-remark-slug`,
           {
-            resolve: 'gatsby-remark-copy-linked-files',
+            resolve: "gatsby-remark-copy-linked-files",
           },
           {
-            resolve: 'gatsby-remark-images',
+            resolve: "gatsby-remark-images",
             options: {
               maxWidth: 1800,
               backgroundColor: `transparent`,
@@ -47,7 +55,7 @@ module.exports = ({ root }) => ({
             resolve: `gatsby-remark-responsive-iframe`,
           },
           {
-            resolve: 'gatsby-remark-prismjs',
+            resolve: "gatsby-remark-prismjs",
           },
         ],
       },
@@ -58,7 +66,7 @@ module.exports = ({ root }) => ({
       options: {
         plugins: [
           `gatsby-remark-slug`,
-          'gatsby-remark-copy-linked-files',
+          "gatsby-remark-copy-linked-files",
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -69,7 +77,7 @@ module.exports = ({ root }) => ({
           {
             resolve: `gatsby-remark-responsive-iframe`,
           },
-          'gatsby-remark-prismjs',
+          "gatsby-remark-prismjs",
         ],
       },
     },
@@ -77,4 +85,4 @@ module.exports = ({ root }) => ({
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
   ],
-})
+});

@@ -1,105 +1,85 @@
-const _ = require('lodash')
-const Promise = require('bluebird')
-const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
-const withThemePath = require('./with-theme-path')
-
+const _ = require("lodash");
+// const Promise = require('bluebird')
+const path = require("path");
+const { createFilePath } = require("gatsby-source-filesystem");
+// const withThemePath = require("./with-theme-path");
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+      modules: [path.resolve(__dirname, "src"), "node_modules"],
     },
-  })
-}
+  });
+};
 
+exports.createPages = async ({
+  graphql,
+  useStaticQuery,
+  actions: { createPage },
+}) => {
+  // const Post = require.resolve(`"./src/templates/Post`);
+  const Post = require.resolve(`./src/templates/Post`);
 
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
-  const Post = withThemePath('./src/templates/Post')
-
-  return new Promise((resolve, reject) => {
-    resolve(
-      graphql(
-        `
-          {
-            allMdx(
-              sort: { fields: [frontmatter___date], order: DESC }
-              limit: 1000
-              filter: { frontmatter: { draft: { ne: true } } }
-            ) {
-              edges {
-                node {
-                  excerpt
-                  fields {
-                    slug
-                  }
-                  frontmatter {
-                    date(formatString: "DD MMMM, YYYY")
-                    title
-                    author
-                    tags
-                  }
-                }
-              }
+  const postQuery = await graphql(`
+    {
+      allMdx(
+        sort: { fields: [frontmatter___date], order: DESC }
+        limit: 1000
+        filter: { frontmatter: { draft: { ne: true } } }
+      ) {
+        edges {
+          node {
+            excerpt
+            fields {
+              URI
+            }
+            frontmatter {
+              date(formatString: "DD MMMM, YYYY")
+              title
+              author
+              tags
             }
           }
-        `
-      ).then(result => {
-        if (result.errors) {
-          console.log(result.errors)
-          reject(result.errors)
         }
+      }
+    }
+  `);
 
-        // Create post pages.
-        const posts = result.data.allMdx.edges
+  const posts = postQuery.data.allMdx.edges;
 
-        _.each(posts, (post, index) => {
-          const previous =
-            index === posts.length - 1 ? null : posts[index + 1].node
-          const next = index === 0 ? null : posts[index - 1].node
+  posts.forEach((post, index) => {
+    const previous = index === posts.length - 1 ? null : posts[index + 1].node;
+    const next = index === 0 ? null : posts[index - 1].node;
 
-          createPage({
-            path: post.node.fields.slug,
-            component: Post,
-            context: {
-              slug: post.node.fields.slug,
-              previous,
-              next,
-            },
-          })
-        })
-      })
-    )
-  })
-}
+    const path = post.node.fields.URI;
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+    if (path !== "root") {
+      createPage({
+        path: path,
+        component: Post,
+        context: {
+          slug: path,
+        },
+      });
+    }
+  });
+};
+
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark` || node.internal.type === `Mdx`) {
-    // const fileNode = getNode(node.parent);
-    // let slug = fileNode.fields.slug;
-    // if (typeof node.frontmatter.path !== 'undefined') {
-    //   slug = node.frontmatter.path;
-    // }
-    // createNodeField({
-    //   node,
-    //   name: 'slugNew',
-    //   value: slug
-    // });
-
     // add default (for filter)
-    if (typeof node.frontmatter.draft === 'undefined') {
-      node.frontmatter.draft = false
+    if (typeof node.frontmatter.draft === "undefined") {
+      node.frontmatter.draft = false;
     }
 
-    const slug = createFilePath({ node, getNode })
+    const slug = node.frontmatter.path;
 
     createNodeField({
       node,
-      name: `slug`,
-      value: node.frontmatter.path || slug,
-    })
+      name: `URI`,
+      value: slug,
+    });
   }
-}
+};

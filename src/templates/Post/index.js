@@ -1,31 +1,29 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
-import { MDXRenderer } from "gatsby-plugin-mdx"
-import { MDXProvider } from "@mdx-js/react"
+import React from "react";
+import { graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXProvider } from "@mdx-js/react";
+import get from "lodash/get";
+import Helmet from "react-helmet";
 
-import get from 'lodash/get'
+import Meta from "../../components/Meta";
+import Layout from "../../components/Layout";
+import "./styles.css";
 
-import Meta from '../../components/Meta'
-import Layout from '../../components/layout'
+const PostPage = ({ data }) => {
+  const siteTitle = get(data, "site.siteMetadata.title");
+  const siteDescription = get(data, "site.siteMetadata.description");
 
-import './styles.css'
+  const post = get(data, "post");
+  const isRoot = get(data, "post.fields.URI") == "root";
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.post
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-    const siteDescription = post.excerpt
-    // const { previous, next } = this.props.pageContext
-
-    return (
-      <Layout location={this.props.location}>
-        <Helmet
-          htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'description', content: siteDescription }]}
-          title={`${post.frontmatter.title} | ${siteTitle}`}
-        />
-
+  return (
+    <React.Fragment>
+      <Helmet
+        htmlAttributes={{ lang: "de" }}
+        meta={[{ name: "description", content: siteDescription }]}
+        title={siteTitle}
+      />
+      <Layout isRoot={isRoot}>
         <div className="post-single__meta">
           <Meta
             words={post.wordCount.words}
@@ -43,54 +41,30 @@ class BlogPostTemplate extends React.Component {
           </div>
         )}
 
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-
         <MDXProvider components={{}}>
-          <MDXRenderer>
-            {post.body}
-          </MDXRenderer>
+          <MDXRenderer>{post.body}</MDXRenderer>
         </MDXProvider>
-        <br />
-        <br />
-        <br />
-
-{/*
-        <hr />
-        <ul>
-          {previous && (
-            <li>
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            </li>
-          )}
-          {next && (
-            <li>
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            </li>
-          )}
-        </ul>
-*/}
       </Layout>
-    )
-  }
-}
+    </React.Fragment>
+  );
+};
 
-export default BlogPostTemplate
+export default PostPage;
 
-export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+export const query = graphql`
+  query PostBySlug($slug: String!) {
     site {
       siteMetadata {
         title
       }
     }
-    post: mdx(fields: { slug: { eq: $slug } }) {
+    post: mdx(fields: { URI: { eq: $slug } }) {
       id
       excerpt
       body
+      fields {
+        URI
+      }
       frontmatter {
         title
         author
@@ -103,4 +77,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

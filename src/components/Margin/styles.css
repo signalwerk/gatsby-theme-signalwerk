@@ -1,7 +1,7 @@
-@import '../App/css/breakpoints-var.css';
-@import '../App/css/colors-var.css';
-@import '../App/css/fonts-var.css';
-@import '../Headings/styles-var.css';
+@import "../App/css/breakpoints-var.css";
+@import "../App/css/colors-var.css";
+@import "../App/css/fonts-var.css";
+@import "../Headings/styles-var.css";
 
 $margin--font--scale: 0.85;
 
@@ -25,7 +25,7 @@ $margin--font--scale: 0.85;
 }
 .Margin--root {
   h1,
-  :global(.h1) {
+  .h1 {
     font-size: calc($fontSizes--default--h1 * $margin--font--scale * 1rem);
     @media (--breakpoint-s) {
       font-size: calc($fontSizes--s--h1 * $margin--font--scale * 1rem);
@@ -33,7 +33,7 @@ $margin--font--scale: 0.85;
   }
 
   h2,
-  :global(.h2) {
+  .h2 {
     font-size: calc($fontSizes--default--h2 * $margin--font--scale * 1rem);
     @media (--breakpoint-s) {
       font-size: calc($fontSizes--s--h2 * $margin--font--scale * 1rem);
@@ -41,7 +41,7 @@ $margin--font--scale: 0.85;
   }
 
   h3,
-  :global(.h3) {
+  .h3 {
     font-size: calc($fontSizes--default--h3 * $margin--font--scale * 1rem);
 
     margin-top: 1.2em;
@@ -53,7 +53,7 @@ $margin--font--scale: 0.85;
   }
 
   h4,
-  :global(.h4) {
+  .h4 {
     font-size: calc($fontSizes--default--h4 * $margin--font--scale * 1rem);
     @media (--breakpoint-s) {
       font-size: calc($fontSizes--s--h4 * $margin--font--scale * 1rem);
