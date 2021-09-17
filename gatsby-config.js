@@ -40,7 +40,7 @@ module.exports = ({ root }) => ({
           {
             resolve: "gatsby-remark-copy-linked-files",
           },
-          `gatsby-remark-slug`,
+          `gatsby-remark-autolink-headers`,
           {
             resolve: "gatsby-remark-copy-linked-files",
           },
@@ -65,7 +65,7 @@ module.exports = ({ root }) => ({
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          `gatsby-remark-slug`,
+          `gatsby-remark-autolink-headers`,
           "gatsby-remark-copy-linked-files",
           {
             resolve: `gatsby-remark-images`,

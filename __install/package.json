@@ -1,17 +1,19 @@
 {
-  "name": "title",
+  "name": "learn.interaction",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Stefan Huber <sh@signalwerk.ch>",
   "license": "MIT",
-  "private": true,
   "scripts": {
-    "build": "yarn workspace example.blog build",
-    "start": "yarn develop",
-    "develop": "yarn workspace example.blog develop"
+    "build": "gatsby build --prefix-paths",
+    "develop": "gatsby develop",
+    "clean:npm": "rm -rf node_modules && rm -rf package-lock.json && rm -rf ./plugins/gatsby-theme-signalwerk/node_modules && rm -rf ./plugins/gatsby-theme-signalwerk/package-lock.json"
+  },
+  "dependencies": {
+    "gatsby": "^3.13.0",
+    "gatsby-theme-signalwerk": "*"
   },
   "workspaces": [
-    "themes/*",
-    "sites/*"
+    "./plugins/*"
   ]
 }
