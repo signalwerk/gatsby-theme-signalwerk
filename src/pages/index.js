@@ -24,7 +24,7 @@ const IndexRoot = ({ data }) => {
         title={siteTitle}
       />
       <Layout isRoot={isRoot}>
-        <h1>{post.frontmatter.title}</h1>
+        <h1>{siteTitle}</h1>
 
         <MDXProvider components={{}}>
           <MDXRenderer>{post.body}</MDXRenderer>

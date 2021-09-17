@@ -19,6 +19,21 @@
   position: sticky;
   top: 0;
   padding: 0.5rem;
+  /* margin-top: 0.5rem; */
+  padding-left: 0.9rem;
+  margin-top: 1rem;
+
+  @media (--breakpoint-l) {
+    padding-left: 3rem;
+  }
   z-index: 90;
-  background-color: white;
+
+  /* background-color: white; */
+  background-color: transparent;
+  a {
+    padding: 0.5rem;
+    background-color: white;
+  }
+  @media (--breakpoint-l) {
+  }
 }

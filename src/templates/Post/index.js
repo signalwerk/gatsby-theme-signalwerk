@@ -20,8 +20,8 @@ const PostPage = ({ data }) => {
     <React.Fragment>
       <Helmet
         htmlAttributes={{ lang: "de" }}
-        meta={[{ name: "description", content: siteDescription }]}
-        title={siteTitle}
+        meta={[{ name: "description", content: post.frontmatter.description }]}
+        title={`${post.frontmatter.title} · ${siteTitle}`}
       />
       <Layout isRoot={isRoot}>
         <div className="post-single__meta">
@@ -31,6 +31,7 @@ const PostPage = ({ data }) => {
             date={post.frontmatter.date}
           />
         </div>
+
         <h1>{post.frontmatter.title}</h1>
 
         {post.frontmatter.description && (
