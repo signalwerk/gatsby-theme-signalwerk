@@ -5,10 +5,14 @@
 * Based on [Christopher Biscardis Theme](https://github.com/ChristopherBiscardi/gatsby-theme-examples)
 * [Introducing gatsby themes](https://github.com/gatsbyjs/gatsby/pull/9517)
 
-# Used
+## Used
 * [Typesetting Blog](https://signalwerk.github.io/typesetting/) [→ Repo](https://github.com/signalwerk/typesetting/)
 * [Walz Blog](https://signalwerk.github.io/walz.alexanderboenninger/) [→ Repo](https://github.com/signalwerk/walz.alexanderboenninger/)
 * [Thesis – Interaction Design Zurich](https://thesis.logrinto.ch/) [→ Repo](https://github.com/logrinto/IAD2017.thesis)
+
+## Todo/To Check
+* Milky-Background? [Example](https://codepen.io/TurkAysenur/full/gOmMgpx)
+* [fancy monospace](https://fonts.google.com/specimen/Space+Mono)
 
 ## Install in a new repo
 ```sh
